@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/screens/detailspage/userdetails.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
   const OtpVerificationScreen({super.key});
@@ -9,7 +10,7 @@ class OtpVerificationScreen extends StatelessWidget {
     final screenHeight = mediaQuery.size.height;
     final screenWidth = mediaQuery.size.width;
 
-    // Define a common decoration for OTP fields
+    
     InputDecoration otpFieldDecoration = InputDecoration(
       contentPadding: EdgeInsets.symmetric(vertical: screenHeight / 70),
       border: OutlineInputBorder(
@@ -90,7 +91,9 @@ class OtpVerificationScreen extends StatelessWidget {
                     const Text("Did not get a code ? "),
                     TextButton(
                       onPressed: () {
-                        // Handle OTP resend
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return UserDetailsScreen();
+                       }));
                       },
                       child: const Text(
                         "Resend OTP",
