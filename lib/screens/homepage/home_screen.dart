@@ -1,7 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:village_app/screens/widgets/home_screen_servicewidget.dart';
+import 'package:village_app/screens/homepage/widget/job_widget.dart';
+import 'package:village_app/screens/homepage/widget/office_widget.dart';
+import 'package:village_app/screens/homepage/widget/quick_widget.dart';
+import 'package:village_app/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/screens/homepage/widget/home_screen_servicewidget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,16 +24,30 @@ class HomeScreen extends StatelessWidget {
       Image.asset('lib/asset/img/Idukki.jpg')
     ];
 
-    final List<Map<String, dynamic>> iconData = [
-      {'icon': MdiIcons.bagSuitcase, 'text': 'Jobs orProfessions'},
-      {'icon': MdiIcons.taxi, 'text': 'TaxiServices'},
-      {'icon': MdiIcons.bus, 'text': 'BusServices'},
-      {'icon': Icons.home_outlined, 'text': 'Shops andBusiness'},
-      {'icon': Icons.tour, 'text': 'Nearby TouristPlaces'},
-      {'icon': MdiIcons.earbudsOutline, 'text': 'OfficeContacts'},
+    final List<Map<String, dynamic>> quickaccessData = [
+      {'icon': MdiIcons.bagSuitcase, 'text': 'Jobs or Professions'},
+      {'icon': MdiIcons.taxi, 'text': 'Taxi Services'},
+      {'icon': MdiIcons.bus, 'text': 'Bus Services'},
+      {'icon': Icons.home_outlined, 'text': 'Shops and Business'},
+      {'icon': Icons.tour, 'text': 'Nearby Tourist Places'},
+      {'icon': MdiIcons.earbudsOutline, 'text': 'Office Contacts'},
       {'icon': MdiIcons.ambulance, 'text': 'Emergency'},
-      {'icon': Icons.video_call_outlined, 'text': 'VillageShorts'},
-      {'icon': Icons.calendar_month_outlined, 'text': 'EventCalender'},
+      {'icon': Icons.video_call_outlined, 'text': 'Village Shorts'},
+      {'icon': Icons.calendar_month_outlined, 'text': 'Event Calender'},
+    ];
+
+    final List<Map<String, dynamic>> officeData = [
+      {'image': 'lib/asset/img/image 1.png', 'text': 'BANK'},
+      {'image': 'lib/asset/img/image 2.png', 'text': 'KSEB'},
+      {'image': 'lib/asset/img/image 3.png', 'text': 'Police'},
+      {'image': 'lib/asset/img/image 4.png', 'text': 'MVD'},
+    ];
+
+    final List<Map<String, dynamic>> jobData = [
+      {'image': 'lib/asset/img/Rectangle 159.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 160.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 162.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 163.png', 'text': 'Emergency'},
     ];
 
     return Scaffold(
@@ -96,7 +114,6 @@ class HomeScreen extends StatelessWidget {
                   width: screenWidth,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(screenWidth / 40),
-                    color: Colors.amber,
                   ),
                   child: CarouselSlider(
                     items: items,
@@ -121,79 +138,56 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: screenHeight / 32),
               ServiceWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: screenWidth / 20, top: screenHeight / 30),
-                    child: Text(
-                      "Quick access",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: screenWidth / 25,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              HomeTextWidget(
+                  screenWidth: screenWidth,
+                  screenHeight: screenHeight,
+                  text: "Quick access",
+                  fontWeight: FontWeight.w600,
+                  fontSize: screenWidth / 25,
+                  paddingLeft: screenWidth / 20,
+                  paddingTop: screenHeight / 30),
               SizedBox(height: screenHeight / 40),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: iconData.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: screenWidth / 30,
-                    mainAxisSpacing: screenHeight / 50,
-                    childAspectRatio: 1,
-                  ),
-                  itemBuilder: (context, index) {
-                    final item = iconData[index];
-                    return Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(screenWidth / 40),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            item['icon'],
-                            size: screenWidth / 10,
-                            color: Color(0xFF427ECC),
-                          ),
-                          SizedBox(height: screenHeight / 60),
-                          Text(
-                            item['text'],
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: screenWidth / 30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+              QuickAccessWidget(
+                  screenWidth: screenWidth,
+                  quickaccessData: quickaccessData,
+                  screenHeight: screenHeight),
+              SizedBox(
+                height: screenHeight / 25,
               ),
-              SizedBox(height: screenHeight/25,),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: screenWidth / 20, top: screenHeight / 30),
-                    child: Text(
-                      "Office Contacts ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: screenWidth / 25,
-                      ),
-                    ),
-                  ),
-                ],
+              HomeTextWidget(
+                  screenWidth: screenWidth,
+                  screenHeight: screenHeight,
+                  text: "Office Contact",
+                  fontWeight: FontWeight.w600,
+                  fontSize: screenWidth / 25,
+                  paddingLeft: screenWidth / 20,
+                  paddingTop: screenHeight / 30),
+              SizedBox(height: screenHeight / 35),
+              OfficeWidget(
+                  screenWidth: screenWidth,
+                  screenHeight: screenHeight,
+                  officeData: officeData),
+              SizedBox(
+                height: screenHeight / 35,
               ),
+              HomeTextWidget(
+                  screenWidth: screenWidth,
+                  screenHeight: screenHeight,
+                  text: "Job or Professional",
+                  fontWeight: FontWeight.w600,
+                  fontSize: screenWidth / 25,
+                  paddingLeft: screenWidth / 20,
+                  paddingTop: screenHeight / 30),
+              SizedBox(height: screenHeight / 35),
+              JobWidget(
+                  screenWidth: screenWidth,
+                  screenHeight: screenHeight,
+                  officeData: officeData,
+                  jobData: jobData),
+              SizedBox(
+                height: screenHeight / 8,
+              ),
+              const Text("Dhoomatech.com, All rights reserved")
             ],
           ),
         ),
