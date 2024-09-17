@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
 class JobWidget extends StatelessWidget {
-  const JobWidget({
+  
+    final List<Map<String, dynamic>> jobData = [
+      {'image': 'lib/asset/img/Rectangle 159.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 160.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 162.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 163.png', 'text': 'Emergency'},
+    ];
+  JobWidget({
     super.key,
     required this.screenWidth,
     required this.screenHeight,
-    required this.officeData,
-    required this.jobData,
+    
   });
 
   final double screenWidth;
   final double screenHeight;
-  final List<Map<String, dynamic>> officeData;
-  final List<Map<String, dynamic>> jobData;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class JobWidget extends StatelessWidget {
         height: screenHeight / 6.5,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: officeData.length,
+          itemCount: jobData.length,
           itemBuilder: (context, index) {
             final item = jobData[index];
             return Padding(

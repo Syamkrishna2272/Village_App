@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
 class OfficeWidget extends StatelessWidget {
-  const OfficeWidget({
+  final List<Map<String, dynamic>> officeData = [
+      {'image': 'lib/asset/img/image 1.png', 'text': 'BANK'},
+      {'image': 'lib/asset/img/image 2.png', 'text': 'KSEB'},
+      {'image': 'lib/asset/img/image 3.png', 'text': 'Police'},
+      {'image': 'lib/asset/img/image 4.png', 'text': 'MVD'},
+    ];
+   OfficeWidget({
     super.key,
     required this.screenWidth,
     required this.screenHeight,
-    required this.officeData,
   });
 
   final double screenWidth;
   final double screenHeight;
-  final List<Map<String, dynamic>> officeData;
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +35,8 @@ class OfficeWidget extends StatelessWidget {
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(screenWidth / 40),
-                    side: BorderSide(
-                        color: Colors.grey.withOpacity(0.3), width: 1),
+                    // side: BorderSide(
+                    //     color: Colors.grey.withOpacity(0.3), width: 1),
                   ),
                   elevation: 2,
                   child: Column(
@@ -40,7 +45,7 @@ class OfficeWidget extends StatelessWidget {
                       SizedBox(
                         width: screenWidth / 7,
                         height: screenHeight / 10,
-                        child: Image.asset(item['image']),
+                        child:Image.asset(item['image']),
                       ),
                       SizedBox(height: screenHeight / 60),
                       Text(

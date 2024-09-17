@@ -79,6 +79,14 @@ flutter:
     - lib/asset/img/Layer_41.png
     - lib/asset/img/Group 618.png
     - lib/asset/img/Group 619.png
+    - lib/asset/img/Ellipse 18.png
+    - lib/asset/img/Ellipse 24.png
+    - lib/asset/img/Ellipse 25.png
+    - lib/asset/img/Ellipse 30.png
+    - lib/asset/img/Ellipse 31.png
+    - lib/asset/img/Ellipse 32.png
+    - lib/asset/img/Ellipse 39.png
+    - lib/asset/img/surface1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
