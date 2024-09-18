@@ -88,6 +88,11 @@ flutter:
     - lib/asset/img/Ellipse 32.png
     - lib/asset/img/Ellipse 39.png
     - lib/asset/img/surface1.png
+    - lib/asset/img/Rectangle 182.png
+    - lib/asset/img/Rectangle 191.png
+    - lib/asset/img/Rectangle 192.png
+    - lib/asset/img/Rectangle 193.png
+    - lib/asset/img/Rectangle 194.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
