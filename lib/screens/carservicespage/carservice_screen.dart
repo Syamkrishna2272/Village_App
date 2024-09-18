@@ -77,16 +77,17 @@ class CarServiceScreen extends StatelessWidget {
 
                   return Padding(
                     padding: EdgeInsets.only(
-                      left: screenWidth / 19,   
+                      left: screenWidth / 19,
                       right: screenWidth / 19,
                       top: screenWidth / 35,
                     ),
                     child: GestureDetector(
-                      onTap: () => ontappItem(context,contact['text']),
+                      onTap: () => ontappItem(context, contact['text']),
                       child: Card(
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(screenWidth / 40),
+                            borderRadius:
+                                BorderRadius.circular(screenWidth / 40),
                           ),
                           height: screenHeight / 10,
                           width: screenWidth,
@@ -116,11 +117,12 @@ class CarServiceScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              const CircleAvatar(
+                              CircleAvatar(
                                 backgroundColor:
-                                    Color.fromARGB(255, 166, 193, 228),
-                                child:
-                                    Icon(Icons.message, color: Color(0XFF427ECC)),
+                                    const Color.fromARGB(255, 166, 193, 228),
+                                child: Icon(Icons.wechat_sharp,
+                                    size: screenWidth / 13,
+                                    color: const Color(0XFF427ECC)),
                               ),
                               SizedBox(width: screenWidth / 20),
                               const CircleAvatar(
@@ -162,13 +164,13 @@ class CarServiceScreen extends StatelessWidget {
     );
   }
 
-  void ontappItem(BuildContext context,String text){
-    switch(text){
+  void ontappItem(BuildContext context, String text) {
+    switch (text) {
       case 'Robert Fox':
-      Navigator.of(context).push(MaterialPageRoute(builder: (context){
-        return CarContactScreen();
-      }));
-      break;
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return const CarContactScreen();
+        }));
+        break;
     }
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:village_app/screens/carservicespage/carservice_screen.dart';
-import 'package:village_app/screens/homepage/widget/office_widget.dart';
 import 'package:village_app/screens/homepage/widget/text_widget.dart';
 
 class TaxiServiceScreen extends StatelessWidget {
@@ -69,7 +68,7 @@ class TaxiServiceScreen extends StatelessWidget {
               height: screenHeight / 6.5,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 3,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   final item = officeData[index];
                   return Padding(

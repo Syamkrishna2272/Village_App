@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CarContactScreen extends StatelessWidget {
   const CarContactScreen({super.key});
@@ -8,6 +9,14 @@ class CarContactScreen extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
     final screenWidth = mediaQuery.size.width;
+
+    final List<Widget> avatarIcons = [
+      Icon(MdiIcons.webSync,color: const Color(0XFF427ECC),size: screenWidth/12),
+      Icon(MdiIcons.whatsapp, color: const Color(0XFF427ECC),size: screenWidth/12),
+      Icon(MdiIcons.instagram, color: const Color(0XFF427ECC),size: screenWidth/12),
+      Icon(MdiIcons.facebook, color: const Color(0XFF427ECC),size: screenWidth/12),
+      Icon(MdiIcons.beach, color: const Color(0XFF427ECC),size: screenWidth/12)
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -43,6 +52,8 @@ class CarContactScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth / 15),
           child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: EdgeInsets.symmetric(vertical: screenHeight / 50),
@@ -82,7 +93,7 @@ class CarContactScreen extends StatelessWidget {
                               ),
                               SizedBox(width: screenWidth / 80),
                               Text(
-                                "INTERIOR DESIGNER",
+                                "INTERIAL DESIGNER",
                                 style: TextStyle(
                                   fontSize: screenWidth / 30,
                                   color: Colors.grey,
@@ -107,13 +118,17 @@ class CarContactScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(screenWidth / 40)),
                     width: screenWidth / 2.4,
                     height: screenHeight / 15,
-                    child:  Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.message, color: Color(0XFF427ECC)),
+                        Icon(Icons.wechat_sharp,
+                            size: screenWidth / 10,
+                            color: const Color(0XFF427ECC)),
                         Text(
                           "Message",
-                          style: TextStyle(fontWeight: FontWeight.w500,fontSize: screenWidth/23),
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: screenWidth / 23),
                         )
                       ],
                     ),
@@ -124,16 +139,62 @@ class CarContactScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(screenWidth / 40)),
                     width: screenWidth / 2.4,
                     height: screenHeight / 15,
-                    child:  Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.phone, color: Color(0XFF23B158)),
+                        Icon(Icons.phone,
+                            size: screenWidth / 15,
+                            color: const Color(0XFF23B158)),
                         Text("Call Now",
-                          style: TextStyle(fontWeight: FontWeight.w500,fontSize: screenWidth/23))
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: screenWidth / 23))
                       ],
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: screenHeight / 42,
+              ),
+              const Text("Hi,  enim ad minim veniam, quis nostrud exercitat"),
+              const Text("ullamco laboris nisi ut aliquip ex ea com."),
+              SizedBox(
+                height: screenHeight / 42,
+              ),
+              const Row(
+                children: [
+                  Icon(Icons.attach_file),
+                  Text("Joined on 12 April 2024")
+                ],
+              ),
+              SizedBox(
+                height: screenHeight / 42,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(avatarIcons.length, (index) {
+                    return Padding(
+                      padding: EdgeInsets.only(right: screenWidth / 30),
+                      child: Container(
+                        width: screenWidth / 6,
+                        height: screenWidth / 6,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 1,
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          child: avatarIcons[index],
+                        ),
+                      ),
+                    );
+                  }),
+                ),
               )
             ],
           ),
