@@ -15,20 +15,23 @@ class ServiceWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Card(
-              child: Container(
+        Padding(
+          padding:  EdgeInsets.only(left: screenWidth/23),
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
                 width: screenWidth / 2.3,
-                height: screenHeight / 15,
+                height: screenHeight / 13,
                 decoration: BoxDecoration(
-                    // color: Colors.amber,
-                    borderRadius: BorderRadius.circular(screenWidth / 40)),
+                    color: const Color(0XFFF4F4F4),
+                    borderRadius: BorderRadius.circular(screenWidth / 45)
+                    ),
                 child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth / 50),
+                      padding: EdgeInsets.only(left: screenWidth / 20),
                       child: Image.asset('lib/asset/img/Group 618.png'),
                     ),
                     SizedBox(width: screenWidth / 50),
@@ -41,18 +44,17 @@ class ServiceWidget extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            Card(
-              child: Container(
+              SizedBox(width: screenWidth/50,),
+              Container(
                 width: screenWidth / 2.3,
-                height: screenHeight / 15,
+                height: screenHeight / 13,
                 decoration: BoxDecoration(
-                    // color: Colors.amber,
-                    borderRadius: BorderRadius.circular(screenWidth / 40)),
+                    color: const Color(0XFFF4F4F4),
+                    borderRadius: BorderRadius.circular(screenWidth / 45)),
                 child: Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth / 50),
+                      padding: EdgeInsets.only(left: screenWidth / 20),
                       child: Image.asset('lib/asset/img/Layer_4.png'),
                     ),
                     SizedBox(width: screenWidth / 50),
@@ -65,26 +67,26 @@ class ServiceWidget extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         SizedBox(
-          height: screenHeight / 38,
+          height: screenHeight / 80,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Card(
-              child: Container(
+        Padding(
+          padding: EdgeInsets.only(left: screenWidth/23),
+          child: Row( 
+            children: [
+              Container(
                 width: screenWidth / 2.3,
-                height: screenHeight / 15,
+                height: screenHeight / 13,
                 decoration: BoxDecoration(
-                    // color: Colors.amber,
-                    borderRadius: BorderRadius.circular(screenWidth / 40)),
+                   color: const Color(0XFFF4F4F4),
+                    borderRadius: BorderRadius.circular(screenWidth / 45)),
                 child: Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth / 50),
+                      padding: EdgeInsets.only(left: screenWidth / 20),
                       child: Image.asset('lib/asset/img/Group 619.png'),
                     ),
                     SizedBox(width: screenWidth / 50),
@@ -97,18 +99,17 @@ class ServiceWidget extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            Card(
-              child: Container(
+              SizedBox(width: screenWidth/50,),
+              Container(
                 width: screenWidth / 2.3,
-                height: screenHeight / 15,
+                height: screenHeight / 13,
                 decoration: BoxDecoration(
-                    // color: Colors.amber,
-                    borderRadius: BorderRadius.circular(screenWidth / 40)),
+                    color: const Color(0XFFF4F4F4),
+                    borderRadius: BorderRadius.circular(screenWidth / 45)),
                 child: Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth / 50),
+                      padding: EdgeInsets.only(left: screenWidth / 20),
                       child: Image.asset('lib/asset/img/Layer_41.png'),
                     ),
                     SizedBox(width: screenWidth / 50),
@@ -120,9 +121,9 @@ class ServiceWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         )
       ],
     );

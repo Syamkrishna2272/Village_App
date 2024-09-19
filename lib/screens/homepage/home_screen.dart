@@ -13,30 +13,28 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final mediaQuery = MediaQuery.of(context);
-      final screenHeight = mediaQuery.size.height;
-      final screenWidth = mediaQuery.size.width;
+    final mediaQuery = MediaQuery.of(context);
+    final screenHeight = mediaQuery.size.height;
+    final screenWidth = mediaQuery.size.width;
 
-    final items = [
-      Image.asset(
-          'lib/asset/img/coolest-places-in-kerala-visit-during-summer.webp'),
-      Image.asset(
-          'lib/asset/img/Jatayu-National-Park-Kerala-1024x512_Snapseed-5aafa43eff1b780036c19082.jpg'),
-      Image.asset('lib/asset/img/Idukki.jpg')
+    final List<String> imagePaths = [
+      'lib/asset/img/coolest-places-in-kerala-visit-during-summer.webp',
+      'lib/asset/img/Jatayu-National-Park-Kerala-1024x512_Snapseed-5aafa43eff1b780036c19082.jpg',
+      'lib/asset/img/Idukki.jpg'
     ];
 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: screenHeight / 10,
+        // toolbarHeight: screenHeight / 10,
         title: Row(
           children: [
             Icon(
               Icons.location_on_rounded,
               color: const Color(0xFF427ECC),
-              size: screenWidth / 8,
+              size: screenWidth / 12,
             ),
-            SizedBox(width: screenWidth / 40),
+            // SizedBox(width: screenWidth / 40),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -45,12 +43,14 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     "Location",
                     style: TextStyle(
-                      fontSize: screenWidth / 32,
+                      fontSize: screenWidth / 36,
                     ),
                   ),
-                  const Text(
+                  Text(
                     "Katharammal",
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: screenWidth / 25),
                   )
                 ],
               ),
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight / 4.3,
               ),
-              SizedBox(height: screenHeight / 45),
+              SizedBox(height: screenHeight /90),
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth / 25, right: screenWidth / 25),
@@ -88,14 +88,46 @@ class HomeScreen extends StatelessWidget {
                   height: screenHeight / 8,
                   width: screenWidth,
                   decoration: BoxDecoration(
+                    color: Colors.amber,
                     borderRadius: BorderRadius.circular(screenWidth / 40),
                   ),
                   child: CarouselSlider(
-                    items: items,
+                    items: imagePaths.map((imagePath) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            width: screenWidth,
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth / 40),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: screenHeight / 5,
+                                  width: screenWidth / 3,
+                                  // color: Colors.black,
+                                  child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(screenWidth / 40),
+                                    child: Image.asset(
+                                      imagePath,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                // Text("'I recommend to stay calm!' | Jurgen Klopp  ")
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    }).toList(),
                     options: CarouselOptions(
                       height: screenHeight / 8,
                       aspectRatio: 16 / 9,
-                      viewportFraction: 0.8,
+                      viewportFraction: 0.95,
                       initialPage: 0,
                       enableInfiniteScroll: true,
                       reverse: false,
@@ -110,7 +142,39 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight / 32),
+
+              // Padding(
+              //   padding: EdgeInsets.only(
+              //       left: screenWidth / 25, right: screenWidth / 25),
+              //   child: Container(
+              //     height: screenHeight / 8,
+              //     width: screenWidth,
+
+              //     decoration: BoxDecoration(
+              //       color: Colors.amber,
+              //       borderRadius: BorderRadius.circular(screenWidth / 40),
+              //     ),
+              //     child: CarouselSlider(
+              //       items: items,
+              //       options: CarouselOptions(
+              //         height: screenHeight / 8,
+              //         aspectRatio: 16 / 9,
+              //         viewportFraction: 0.8,
+              //         initialPage: 0,
+              //         enableInfiniteScroll: true,
+              //         reverse: false,
+              //         autoPlay: true,
+              //         autoPlayInterval: const Duration(seconds: 3),
+              //         autoPlayAnimationDuration:
+              //             const Duration(milliseconds: 800),
+              //         autoPlayCurve: Curves.fastOutSlowIn,
+              //         enlargeCenterPage: true,
+              //         scrollDirection: Axis.horizontal,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(height: screenHeight / 50),
               ServiceWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),
               HomeTextWidget(
@@ -121,12 +185,12 @@ class HomeScreen extends StatelessWidget {
                   fontSize: screenWidth / 25,
                   paddingLeft: screenWidth / 20,
                   paddingTop: screenHeight / 30),
-              SizedBox(height: screenHeight / 40),
+              SizedBox(height: screenHeight / 80),
               QuickAccessWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),
-              SizedBox(
-                height: screenHeight / 25,
-              ),
+              // SizedBox(
+              //   height: screenHeight / 25,
+              // ),
               HomeTextWidget(
                   screenWidth: screenWidth,
                   screenHeight: screenHeight,
@@ -135,12 +199,12 @@ class HomeScreen extends StatelessWidget {
                   fontSize: screenWidth / 25,
                   paddingLeft: screenWidth / 20,
                   paddingTop: screenHeight / 30),
-              SizedBox(height: screenHeight / 35),
+              SizedBox(height: screenHeight / 80),
               OfficeWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),
-              SizedBox(
-                height: screenHeight / 35,
-              ),
+              // SizedBox(
+              //   height: screenHeight / 35,
+              // ),
               HomeTextWidget(
                   screenWidth: screenWidth,
                   screenHeight: screenHeight,
@@ -149,7 +213,7 @@ class HomeScreen extends StatelessWidget {
                   fontSize: screenWidth / 25,
                   paddingLeft: screenWidth / 20,
                   paddingTop: screenHeight / 30),
-              SizedBox(height: screenHeight / 35),
+              SizedBox(height: screenHeight / 80),
               JobWidget(
                 screenWidth: screenWidth,
                 screenHeight: screenHeight,

@@ -49,7 +49,7 @@ class TabbarWidget extends StatelessWidget {
       child: TabBarView(
         children: [
           SingleChildScrollView(
-            child: Column(
+            child: Column(                                            //Details Tab
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 HomeTextWidget(
@@ -58,9 +58,10 @@ class TabbarWidget extends StatelessWidget {
                   text: "About",
                   fontWeight: FontWeight.w600,
                   fontSize: screenWidth / 22,
-                  paddingLeft: screenWidth / 28,
+                  paddingLeft: screenWidth /62,
                   paddingTop: screenHeight / 30,
                 ),
+                SizedBox(height: screenHeight/50),
                 const Text("Hi,  enim ad minim veniam, quis nostrud exercitat"),
                 const Text("ullamco laboris nisi ut aliquip ex ea com."),
                 const Divider(),
@@ -70,9 +71,10 @@ class TabbarWidget extends StatelessWidget {
                   text: "Work",
                   fontWeight: FontWeight.w600,
                   fontSize: screenWidth / 22,
-                  paddingLeft: screenWidth / 28,
+                  paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
+                SizedBox(height: screenHeight/50),
                 const Text("Graphic Designer at Viral Mafia"),
                 const Divider(),
                 HomeTextWidget(
@@ -81,9 +83,10 @@ class TabbarWidget extends StatelessWidget {
                   text: "Higher Education",
                   fontWeight: FontWeight.w600,
                   fontSize: screenWidth / 22,
-                  paddingLeft: screenWidth / 28,
+                  paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
+                SizedBox(height: screenHeight/50),
                 const Text("SSLC"),
                 const Text("MJ Higher Secondary School, Elettil"),
                 const Divider(),
@@ -93,13 +96,14 @@ class TabbarWidget extends StatelessWidget {
                   text: "Skills",
                   fontWeight: FontWeight.w600,
                   fontSize: screenWidth / 22,
-                  paddingLeft: screenWidth / 28,
+                  paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
+                SizedBox(height: screenHeight/50),
               ],
             ),
           ),
-          GridView.builder(
+          GridView.builder(                                              //Portfolio Tab
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               crossAxisSpacing: 8.0,
@@ -115,7 +119,7 @@ class TabbarWidget extends StatelessWidget {
               );
             },
           ),
-          Container(
+          Container(                                         //Job Tab
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(screenWidth / 45),
             ),
@@ -187,8 +191,7 @@ class TabbarWidget extends StatelessWidget {
                         bottomRight: Radius.circular(screenWidth / 45)),
                   ),
                   width: screenWidth,
-                  height: screenHeight /
-                      1.5, // Increased height to allow space for ListView
+                  height: screenHeight / 1.5, 
                   child: Column(
                     children: [
                       Padding(

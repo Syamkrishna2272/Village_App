@@ -4,8 +4,21 @@ import 'package:village_app/screens/otppage/otp_screen.dart';
 import 'package:village_app/screens/widgets/button_widget.dart';
 import 'package:village_app/screens/widgets/dialog_screen.dart'; // Make sure you import your ButtonWidget class.
 
-class MobileNumberScreen extends StatelessWidget {
+class MobileNumberScreen extends StatefulWidget {
   const MobileNumberScreen({super.key});
+
+  @override
+  State<MobileNumberScreen> createState() => _MobileNumberScreenState();
+}
+
+class _MobileNumberScreenState extends State<MobileNumberScreen> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showMobileNumberDialog(context);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,27 +66,22 @@ class MobileNumberScreen extends StatelessWidget {
                     SizedBox(
                       width: screenWidth / 15,
                     ),
-                    GestureDetector(
-                      onTap: () => showMobileNumberDialog(context),
-                      child: SizedBox(
-                        height: screenHeight / 25,
-                        width: screenWidth / 1.6,
-                        child: AbsorbPointer(
-                          child: TextField(
-                            keyboardType: TextInputType.number,
-                            maxLength: 10,
-                            textAlign: TextAlign.start,
-                            style: TextStyle(fontSize: screenWidth / 23),
-                            decoration: InputDecoration(
-                              suffixIcon: Icon(
-                                Icons.close,
-                                size: screenWidth / 20,
-                              ),
-                              counterText: '',
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: screenHeight / 65),
-                            ),
+                    SizedBox(
+                      height: screenHeight / 25,
+                      width: screenWidth / 1.6,
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        maxLength: 10,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: screenWidth / 23),
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(
+                            Icons.close,
+                            size: screenWidth / 20,
                           ),
+                          counterText: '',
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: screenHeight / 65),
                         ),
                       ),
                     ),
@@ -102,7 +110,8 @@ class MobileNumberScreen extends StatelessWidget {
                   fontSize: screenWidth / 28,
                   textColor: Colors.white,
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
                       return const OtpVerificationScreen();
                     }));
                   },

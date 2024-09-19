@@ -11,7 +11,7 @@ void showMobileNumberDialog(BuildContext context) {
                 fontSize: MediaQuery.sizeOf(context).width / 28,
                 color: const Color(0xFF00120B)),
           ),
-          content: Container(
+          content: SizedBox(
             width: MediaQuery.sizeOf(context).width,
             height: MediaQuery.sizeOf(context).height/4.5,
             child: Column(

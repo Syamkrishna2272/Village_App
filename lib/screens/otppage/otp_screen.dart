@@ -16,7 +16,7 @@ class OtpVerificationScreen extends StatelessWidget {
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(
-          color: Colors.black,
+          color: Colors.black,   
           width: screenWidth,
         ),
       ),
@@ -92,7 +92,7 @@ class OtpVerificationScreen extends StatelessWidget {
                     TextButton(
                       onPressed: () {
                        Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                        return UserDetailsScreen();
+                        return const UserDetailsScreen();
                        }));
                       },
                       child: const Text(

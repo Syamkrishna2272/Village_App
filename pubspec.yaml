@@ -93,6 +93,15 @@ flutter:
     - lib/asset/img/Rectangle 192.png
     - lib/asset/img/Rectangle 193.png
     - lib/asset/img/Rectangle 194.png
+    - lib/asset/img/Frame.png
+    - lib/asset/img/Group 605.png
+    - lib/asset/img/Group 606.png
+    - lib/asset/img/Group 608.png
+    - lib/asset/img/Group 610.png
+    - lib/asset/img/Group 612.png
+    - lib/asset/img/Group 613.png
+    - lib/asset/img/Group 614.png
+    - lib/asset/img/Vector (1).png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -195,7 +195,8 @@ class CarContactScreen extends StatelessWidget {
                     tabs: [
                       Tab(text: "Details"),
                       Tab(text: "Portfolio"),
-                      Tab(text: "Jobs")
+                      Tab(text: "Jobs"),
+                      
                     ],
                     indicatorColor: Colors.blue,
                     labelColor: Colors.blue,

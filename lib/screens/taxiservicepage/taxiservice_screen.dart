@@ -73,64 +73,19 @@ class TaxiServiceScreen extends StatelessWidget {
                   final item = officeData[index];
                   return Padding(
                     padding: EdgeInsets.only(right: screenWidth / 30),
-                    child: SizedBox(
-                      width: screenWidth / 3.5,
-                      child: GestureDetector(
-                        onTap: () => ontappItem(context,item['text']),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(screenWidth / 40),
+                    child: GestureDetector(
+                      onTap: () => ontappItem(context, item['text']),
+                      child: Container(
+                        width: screenWidth / 3.5,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border.all(
+                            color: const Color(0XFFD9D9D9),
+                            width: 1,
                           ),
-                          elevation: 2,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: screenWidth / 7,
-                                height: screenHeight / 10,
-                                child: Image.asset(item['image']),
-                              ),
-                              SizedBox(height: screenHeight / 60),
-                              Text(
-                                item['text'],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: screenWidth / 32,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                          borderRadius:
+                              BorderRadius.circular(screenWidth / 45),
                         ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ) ,
-          SizedBox(
-            height: screenHeight / 25,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
-            child: SizedBox(
-              height: screenHeight / 6.5,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  final item = officeData[index];
-                  return Padding(
-                    padding: EdgeInsets.only(right: screenWidth / 30),
-                    child: SizedBox(
-                      width: screenWidth / 3.5,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(screenWidth / 40),
-                        ),
-                        elevation: 2,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -157,19 +112,69 @@ class TaxiServiceScreen extends StatelessWidget {
                 },
               ),
             ),
-          ) 
+          ),
+          SizedBox(
+            height: screenHeight / 25,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
+            child: SizedBox(
+              height: screenHeight / 6.5,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  final item = officeData[index]; 
+                  return Padding(
+                    padding: EdgeInsets.only(right: screenWidth / 30),
+                    child: Container(
+                      width: screenWidth / 3.5, 
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.all(
+                          color: const Color(0XFFD9D9D9),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(screenWidth / 45),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: screenWidth / 7,
+                            height: screenHeight / 10,
+                            child: Image.asset(item['image']),
+                          ),
+                          SizedBox(height: screenHeight / 60),
+                          Text(
+                            item['text'],
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: screenWidth / 32,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
         ],
       )),
     );
   }
 
-  void ontappItem(BuildContext context,String text){
-    switch(text){
-      case 'Car Service': 
-      Navigator.of(context).push(MaterialPageRoute(builder: (context){
-        return  CarServiceScreen();
-      }));
-      break;
+  void ontappItem(BuildContext context, String text) {
+    switch (text) {
+      case 'Car Service':
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return CarServiceScreen();
+        }));
+        break;
     }
   }
 }
