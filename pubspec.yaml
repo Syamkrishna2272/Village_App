@@ -102,6 +102,10 @@ flutter:
     - lib/asset/img/Group 613.png
     - lib/asset/img/Group 614.png
     - lib/asset/img/Vector (1).png
+    - lib/asset/img/Group.png
+    - lib/asset/img/Group 625.png
+    - lib/asset/img/Group (1).png
+    - lib/asset/img/Frame (1).png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

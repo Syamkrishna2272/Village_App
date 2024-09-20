@@ -9,6 +9,7 @@ class TaxiServiceScreen extends StatelessWidget {
     {'image': 'lib/asset/img/image 3.png', 'text': 'Police'},
     {'image': 'lib/asset/img/image 4.png', 'text': 'MVD'},
   ];
+
   TaxiServiceScreen({super.key});
 
   @override
@@ -16,6 +17,7 @@ class TaxiServiceScreen extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
     final screenWidth = mediaQuery.size.width;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -52,46 +54,96 @@ class TaxiServiceScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-          child: Column(
-        children: [
-          HomeTextWidget(
+        child: Column(
+          children: [
+            HomeTextWidget(
               screenWidth: screenWidth,
               screenHeight: screenHeight,
               text: "Total 7 Services",
               fontWeight: FontWeight.w600,
               fontSize: screenWidth / 25,
               paddingLeft: screenWidth / 20,
-              paddingTop: screenHeight / 30),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
-            child: SizedBox(
-              height: screenHeight / 6.5,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  final item = officeData[index];
-                  return Padding(
-                    padding: EdgeInsets.only(right: screenWidth / 30),
-                    child: GestureDetector(
-                      onTap: () => ontappItem(context, item['text']),
+              paddingTop: screenHeight / 30,
+            ),
+            SizedBox(height: screenHeight/30),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
+              child: SizedBox(
+                height: screenHeight / 7, // Adjusted height
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    final item = officeData[index];
+                    return Padding(
+                      padding: EdgeInsets.only(right: screenWidth / 30),
+                      child: GestureDetector(
+                        onTap: () => ontappItem(context, item['text']),
+                        child: Container(
+                          width: screenWidth / 4, // Adjusted width to fit 4 items
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            border: Border.all(
+                              color: const Color(0XFFD9D9D9),
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(screenWidth / 45),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: screenWidth / 7,
+                                height: screenHeight / 12, // Adjusted height for image
+                                child: Image.asset(item['image']),
+                              ),
+                              SizedBox(height: screenHeight / 60),
+                              Text(
+                                item['text'],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: screenWidth / 32,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: screenHeight / 25),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
+              child: SizedBox(
+                height: screenHeight / 7, // Adjusted height
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    final item = officeData[index];
+                    return Padding(
+                      padding: EdgeInsets.only(right: screenWidth / 30),
                       child: Container(
-                        width: screenWidth / 3.5,
+                        width: screenWidth / 4, // Adjusted width to fit 3 items
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                           border: Border.all(
                             color: const Color(0XFFD9D9D9),
                             width: 1,
                           ),
-                          borderRadius:
-                              BorderRadius.circular(screenWidth / 45),
+                          borderRadius: BorderRadius.circular(screenWidth / 45),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
                               width: screenWidth / 7,
-                              height: screenHeight / 10,
+                              height: screenHeight / 12, // Adjusted height for image
                               child: Image.asset(item['image']),
                             ),
                             SizedBox(height: screenHeight / 60),
@@ -107,64 +159,14 @@ class TaxiServiceScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: screenHeight / 25,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
-            child: SizedBox(
-              height: screenHeight / 6.5,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  final item = officeData[index]; 
-                  return Padding(
-                    padding: EdgeInsets.only(right: screenWidth / 30),
-                    child: Container(
-                      width: screenWidth / 3.5, 
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        border: Border.all(
-                          color: const Color(0XFFD9D9D9),
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(screenWidth / 45),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: screenWidth / 7,
-                            height: screenHeight / 10,
-                            child: Image.asset(item['image']),
-                          ),
-                          SizedBox(height: screenHeight / 60),
-                          Text(
-                            item['text'],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: screenWidth / 32,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          )
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 

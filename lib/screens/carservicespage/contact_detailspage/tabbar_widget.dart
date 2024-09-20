@@ -37,11 +37,6 @@ class TabbarWidget extends StatelessWidget {
         'text': 'Kristin Watson',
         'email': 'kristin.watson@exam.com'
       },
-      {
-        'image': 'lib/asset/img/Ellipse 30.png',
-        'text': 'Ralph Edwards',
-        'email': 'ralph.edwards@exam.com'
-      },
     ];
 
     return SizedBox(
@@ -49,7 +44,8 @@ class TabbarWidget extends StatelessWidget {
       child: TabBarView(
         children: [
           SingleChildScrollView(
-            child: Column(                                            //Details Tab
+            child: Column(
+              //Details Tab
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 HomeTextWidget(
@@ -58,10 +54,10 @@ class TabbarWidget extends StatelessWidget {
                   text: "About",
                   fontWeight: FontWeight.w600,
                   fontSize: screenWidth / 22,
-                  paddingLeft: screenWidth /62,
+                  paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
-                SizedBox(height: screenHeight/50),
+                SizedBox(height: screenHeight / 50),
                 const Text("Hi,  enim ad minim veniam, quis nostrud exercitat"),
                 const Text("ullamco laboris nisi ut aliquip ex ea com."),
                 const Divider(),
@@ -74,7 +70,7 @@ class TabbarWidget extends StatelessWidget {
                   paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
-                SizedBox(height: screenHeight/50),
+                SizedBox(height: screenHeight / 50),
                 const Text("Graphic Designer at Viral Mafia"),
                 const Divider(),
                 HomeTextWidget(
@@ -86,7 +82,7 @@ class TabbarWidget extends StatelessWidget {
                   paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
-                SizedBox(height: screenHeight/50),
+                SizedBox(height: screenHeight / 50),
                 const Text("SSLC"),
                 const Text("MJ Higher Secondary School, Elettil"),
                 const Divider(),
@@ -99,11 +95,20 @@ class TabbarWidget extends StatelessWidget {
                   paddingLeft: screenWidth / 62,
                   paddingTop: screenHeight / 30,
                 ),
-                SizedBox(height: screenHeight/50),
+                SizedBox(height: screenHeight / 50),
+                Text("• Graphic Designer",
+                    style: TextStyle(fontSize: screenWidth / 25,fontWeight: FontWeight.w500)),
+                Text("• Content Creation Management",
+                    style: TextStyle(fontSize: screenWidth / 25,fontWeight: FontWeight.w500)),
+                Text("• Search engine optimization",
+                    style: TextStyle(fontSize: screenWidth / 25,fontWeight: FontWeight.w500)),
+                Text("• Social Media Manage",
+                    style: TextStyle(fontSize: screenWidth / 25,fontWeight: FontWeight.w500)),
               ],
             ),
           ),
-          GridView.builder(                                              //Portfolio Tab
+          GridView.builder(
+            //Portfolio Tab
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               crossAxisSpacing: 8.0,
@@ -119,7 +124,8 @@ class TabbarWidget extends StatelessWidget {
               );
             },
           ),
-          Container(                                         //Job Tab
+          Container(
+            //Job Tab
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(screenWidth / 45),
             ),
@@ -149,14 +155,12 @@ class TabbarWidget extends StatelessWidget {
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500),
                             ),
-                            const Icon(Icons.savings,
-                                color: Color.fromARGB(255, 209, 206, 206)),
+                            Image.asset('lib/asset/img/Group (1).png'),
                             Text(
                               "INR. 5000/Hour",
                               style: TextStyle(
                                   fontSize: screenWidth / 35,
-                                  color:
-                                      const Color.fromARGB(255, 209, 206, 206)),
+                                  color: Colors.white),
                             )
                           ],
                         ),
@@ -173,9 +177,8 @@ class TabbarWidget extends StatelessWidget {
                             Text(
                               "Thalassery",
                               style: TextStyle(
-                                  fontSize: screenWidth / 35,
-                                  color:
-                                      const Color.fromARGB(255, 209, 206, 206)),
+                                  fontSize: screenWidth / 33,
+                                  color: Colors.white),
                             )
                           ],
                         ),
@@ -185,13 +188,13 @@ class TabbarWidget extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 244, 240, 240),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(screenWidth / 45),
                         bottomRight: Radius.circular(screenWidth / 45)),
                   ),
                   width: screenWidth,
-                  height: screenHeight / 1.5, 
+                  height: screenHeight / 2,
                   child: Column(
                     children: [
                       Padding(
@@ -223,60 +226,58 @@ class TabbarWidget extends StatelessWidget {
                                 right: screenWidth / 25,
                                 top: screenWidth / 35,
                               ),
-                              child: Card(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(screenWidth / 40),
-                                  ),
-                                  height: screenHeight / 10,
-                                  width: screenWidth,
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.all(screenWidth / 28),
-                                        child: CircleAvatar(
-                                          radius: screenWidth / 15,
-                                          backgroundImage:
-                                              AssetImage(contact['image']),
-                                        ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.circular(screenWidth / 40),
+                                ),
+                                height: screenHeight / 10,
+                                width: screenWidth,
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(screenWidth / 28),
+                                      child: CircleAvatar(
+                                        radius: screenWidth / 15,
+                                        backgroundImage:
+                                            AssetImage(contact['image']),
                                       ),
-                                      SizedBox(
-                                        height: screenHeight,
-                                        width: screenWidth / 2.5,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              contact['text'],
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: screenWidth / 25,
-                                              ),
+                                    ),
+                                    SizedBox(
+                                      height: screenHeight,
+                                      width: screenWidth / 2.5,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            contact['text'],
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: screenWidth / 25,
                                             ),
-                                            Text(
-                                              contact['email'],
-                                              style: TextStyle(
-                                                fontSize: screenWidth / 32,
-                                                color: Colors.grey,
-                                              ),
+                                          ),
+                                          Text(
+                                            contact['email'],
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 32,
+                                              color: Colors.grey,
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                      SizedBox(width: screenWidth / 28),
-                                      const CircleAvatar(
-                                        backgroundColor:
-                                            Color.fromARGB(255, 188, 238, 207),
-                                        child: Icon(Icons.phone,
-                                            color: Color(0XFF23B158)),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    SizedBox(width: screenWidth / 28),
+                                    CircleAvatar(
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 188, 238, 207),
+                                      child: Image.asset(
+                                          'lib/asset/img/Group.png'),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );

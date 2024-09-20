@@ -80,100 +80,110 @@ class HomeScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight / 4.3,
               ),
-              SizedBox(height: screenHeight /90),
+              SizedBox(height: screenHeight / 90),
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth / 25, right: screenWidth / 25),
-                child: Container(
-                  height: screenHeight / 8,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(screenWidth / 40),
-                  ),
-                  child: CarouselSlider(
-                    items: imagePaths.map((imagePath) {
-                      return Builder(
-                        builder: (BuildContext context) {
-                          return Container(
-                            width: screenWidth,
-                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.circular(screenWidth / 40),
-                            ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: screenHeight / 5,
-                                  width: screenWidth / 3,
-                                  // color: Colors.black,
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.circular(screenWidth / 40),
-                                    child: Image.asset(
-                                      imagePath,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                // Text("'I recommend to stay calm!' | Jurgen Klopp  ")
-                              ],
-                            ),
-                          );
-                        },
-                      );
-                    }).toList(),
-                    options: CarouselOptions(
+                child: Card(
+                  child: Container(
                       height: screenHeight / 8,
-                      aspectRatio: 16 / 9,
-                      viewportFraction: 0.95,
-                      initialPage: 0,
-                      enableInfiniteScroll: true,
-                      reverse: false,
-                      autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enlargeCenterPage: true,
-                      scrollDirection: Axis.horizontal,
-                    ),
-                  ),
+                      width: screenWidth,
+                      decoration: BoxDecoration(
+                        // color: Colors.amber,
+                        borderRadius: BorderRadius.circular(screenWidth / 40),
+                      ),
+                      child: CarouselSlider(
+                        items: imagePaths.map((imagePath) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                width: screenWidth,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.circular(screenWidth / 40),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: screenHeight / 6,
+                                      width: screenWidth / 3,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(
+                                            screenWidth / 40),
+                                        child: Image.asset(
+                                          imagePath,
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: screenWidth / 30),
+
+                                    // Text container
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: screenHeight / 80),
+                                            child: Container(
+                                              height: screenHeight / 35,
+                                              width: screenWidth / 5,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.red,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          screenWidth / 65)),
+                                              child: Center(
+                                                  child: Text(
+                                                "HOT NEWS",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: screenWidth / 32,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              )),
+                                            ),
+                                          ),
+                                          SizedBox(height: screenHeight / 100),
+                                          Text(
+                                            "'I recommend to stay calm!' | Jurgen Klopp  ",
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 32,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                        options: CarouselOptions(
+                          height: screenHeight / 3, 
+                          aspectRatio: 16 / 9,
+                          viewportFraction: 0.95,
+                          initialPage: 0,
+                          enableInfiniteScroll: true,
+                          reverse: false,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      )),
                 ),
               ),
-
-              // Padding(
-              //   padding: EdgeInsets.only(
-              //       left: screenWidth / 25, right: screenWidth / 25),
-              //   child: Container(
-              //     height: screenHeight / 8,
-              //     width: screenWidth,
-
-              //     decoration: BoxDecoration(
-              //       color: Colors.amber,
-              //       borderRadius: BorderRadius.circular(screenWidth / 40),
-              //     ),
-              //     child: CarouselSlider(
-              //       items: items,
-              //       options: CarouselOptions(
-              //         height: screenHeight / 8,
-              //         aspectRatio: 16 / 9,
-              //         viewportFraction: 0.8,
-              //         initialPage: 0,
-              //         enableInfiniteScroll: true,
-              //         reverse: false,
-              //         autoPlay: true,
-              //         autoPlayInterval: const Duration(seconds: 3),
-              //         autoPlayAnimationDuration:
-              //             const Duration(milliseconds: 800),
-              //         autoPlayCurve: Curves.fastOutSlowIn,
-              //         enlargeCenterPage: true,
-              //         scrollDirection: Axis.horizontal,
-              //       ),
-              //     ),
-              //   ),
-              // ),
               SizedBox(height: screenHeight / 50),
               ServiceWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),

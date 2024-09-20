@@ -60,7 +60,6 @@ class CarContactScreen extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(vertical: screenHeight / 50),
                     decoration: BoxDecoration(
-                      color: Colors.amber.shade50,
                       borderRadius: BorderRadius.circular(screenWidth / 30),
                     ),
                     child: Row(
@@ -87,9 +86,10 @@ class CarContactScreen extends StatelessWidget {
                               ),
                               Row(
                                 children: [
-                                  Icon(Icons.work_outline,
-                                      size: screenWidth / 25,
-                                      color: Colors.grey),
+                                  Image.asset('lib/asset/img/Frame (1).png'),
+                                  // Icon(Icons.work_outline,
+                                  //     size: screenWidth / 25,
+                                  //     color: Colors.grey),
                                   SizedBox(width: screenWidth / 80),
                                   Text(
                                     "INTERIAL DESIGNER",
@@ -119,14 +119,15 @@ class CarContactScreen extends StatelessWidget {
                         width: screenWidth / 2.4,
                         height: screenHeight / 15,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.wechat_sharp,
-                                size: screenWidth / 10,
-                                color: const Color(0XFF427ECC)),
+                            Padding(
+                              padding: EdgeInsets.only(left: screenWidth / 15),
+                              child: Image.asset('lib/asset/img/Group 625.png'),
+                            ),
+                            SizedBox(width: screenWidth / 28),
                             Text("Message",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w400,
                                     fontSize: screenWidth / 23))
                           ],
                         ),
@@ -139,14 +140,16 @@ class CarContactScreen extends StatelessWidget {
                         width: screenWidth / 2.4,
                         height: screenHeight / 15,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.phone,
-                                size: screenWidth / 15,
-                                color: const Color(0XFF23B158)),
+                            Padding(
+                              padding: EdgeInsets.only(left: screenWidth / 15),
+                              child: Image.asset('lib/asset/img/Group.png'),
+                            ),
+                            SizedBox(width: screenWidth / 28),
                             Text("Call Now",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w400,
                                     fontSize: screenWidth / 23))
                           ],
                         ),
@@ -177,7 +180,7 @@ class CarContactScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Colors.grey,
+                                color: const Color(0XFFD9E5F5),
                                 width: 1,
                               ),
                             ),
@@ -191,16 +194,27 @@ class CarContactScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: screenHeight / 35),
-                  const TabBar(
-                    tabs: [
+                  TabBar(
+                    tabs: const [
                       Tab(text: "Details"),
                       Tab(text: "Portfolio"),
                       Tab(text: "Jobs"),
-                      
                     ],
-                    indicatorColor: Colors.blue,
-                    labelColor: Colors.blue,
-                    unselectedLabelColor: Colors.grey,
+                    indicator: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(screenWidth / 15),
+                    ),
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    labelColor: Colors.white,
+                    unselectedLabelColor: Colors.blue,
+                    labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenWidth / 25,
+                    ),
+                    unselectedLabelStyle: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: screenWidth / 25,
+                    ),
                   ),
                   SizedBox(height: screenHeight / 30),
                   TabbarWidget(
