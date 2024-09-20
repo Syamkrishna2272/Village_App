@@ -87,9 +87,6 @@ class CarContactScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   Image.asset('lib/asset/img/Frame (1).png'),
-                                  // Icon(Icons.work_outline,
-                                  //     size: screenWidth / 25,
-                                  //     color: Colors.grey),
                                   SizedBox(width: screenWidth / 80),
                                   Text(
                                     "INTERIAL DESIGNER",
@@ -215,6 +212,7 @@ class CarContactScreen extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                       fontSize: screenWidth / 25,
                     ),
+                    dividerColor: Colors.transparent,
                   ),
                   SizedBox(height: screenHeight / 30),
                   TabbarWidget(

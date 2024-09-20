@@ -16,7 +16,7 @@ class ServiceWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding:  EdgeInsets.only(left: screenWidth/23),
+          padding:  EdgeInsets.only(left: screenWidth/18),
           child: Row(
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -71,10 +71,10 @@ class ServiceWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: screenHeight / 80,
+          height: screenHeight / 90,
         ),
         Padding(
-          padding: EdgeInsets.only(left: screenWidth/23),
+          padding: EdgeInsets.only(left: screenWidth/18),
           child: Row( 
             children: [
               Container(

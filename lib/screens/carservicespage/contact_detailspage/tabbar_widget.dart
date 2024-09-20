@@ -46,7 +46,7 @@ class TabbarWidget extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               //Details Tab
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start, 
               children: [
                 HomeTextWidget(
                   screenWidth: screenWidth,
