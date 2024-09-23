@@ -84,6 +84,7 @@ class CarContactScreen extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                               ),
+                              SizedBox(height: screenHeight / 80),
                               Row(
                                 children: [
                                   Image.asset('lib/asset/img/Frame (1).png'),
@@ -104,7 +105,7 @@ class CarContactScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: screenHeight / 30),
+                  // SizedBox(height: screenHeight / 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -114,7 +115,7 @@ class CarContactScreen extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(screenWidth / 40)),
                         width: screenWidth / 2.4,
-                        height: screenHeight / 15,
+                        height: screenHeight / 18,
                         child: Row(
                           children: [
                             Padding(
@@ -135,9 +136,8 @@ class CarContactScreen extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(screenWidth / 40)),
                         width: screenWidth / 2.4,
-                        height: screenHeight / 15,
+                        height: screenHeight / 18,
                         child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Padding(
                               padding: EdgeInsets.only(left: screenWidth / 15),

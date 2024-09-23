@@ -78,11 +78,9 @@ class CarServiceScreen extends StatelessWidget {
                   final contact = contactData[index];
 
                   return Padding(
-                    padding: EdgeInsets.only(
-                      left: screenWidth / 19,
-                      right: screenWidth / 19,
-                      top: screenWidth / 35,
-                    ),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth / 35,
+                        vertical: screenWidth / 85),
                     child: GestureDetector(
                       onTap: () => ontappItem(
                         context,
@@ -93,7 +91,7 @@ class CarServiceScreen extends StatelessWidget {
                           color: const Color(0XFFF4F4F4),
                           borderRadius: BorderRadius.circular(screenWidth / 45),
                         ),
-                        height: screenHeight / 10,
+                        height: screenHeight / 11,
                         width: screenWidth,
                         child: Row(
                           children: [
@@ -123,12 +121,13 @@ class CarServiceScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            SizedBox(width: screenWidth / 16),
                             CircleAvatar(
                               backgroundColor:
                                   const Color.fromARGB(255, 166, 193, 228),
                               child: Image.asset('lib/asset/img/Group 625.png'),
                             ),
-                            SizedBox(width: screenWidth / 30),
+                            SizedBox(width: screenWidth / 38),
                             CircleAvatar(
                               backgroundColor:
                                   const Color.fromARGB(255, 188, 238, 207),

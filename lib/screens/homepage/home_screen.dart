@@ -25,8 +25,8 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 234, 252, 247),
         automaticallyImplyLeading: false,
-        // toolbarHeight: screenHeight / 10,
         title: Row(
           children: [
             Icon(
@@ -34,7 +34,6 @@ class HomeScreen extends StatelessWidget {
               color: const Color(0xFF427ECC),
               size: screenWidth / 12,
             ),
-            // SizedBox(width: screenWidth / 40),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +57,7 @@ class HomeScreen extends StatelessWidget {
             Icon(
               Icons.notifications,
               color: Colors.black,
-              size: screenWidth / 12,
+              size: screenWidth / 15,
             ),
             SizedBox(width: screenWidth / 40),
             const CircleAvatar(
@@ -80,38 +79,38 @@ class HomeScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight / 4.3,
               ),
-              SizedBox(height: screenHeight / 90),
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth / 25, right: screenWidth / 25),
-                child: Card(
-                  child: Padding(
-                    padding:  EdgeInsets.all(screenWidth/45),
-                    child: Container(
-                        height: screenHeight / 8,
-                        width: screenWidth,
-                        decoration: BoxDecoration(
-                          // color: Colors.amber,
-                          borderRadius: BorderRadius.circular(screenWidth / 40),
-                        ),
-                        child: CarouselSlider(
-                          items: imagePaths.map((imagePath) {
-                            return Builder(
-                              builder: (BuildContext context) {
-                                return Container(
-                                  width: screenWidth,
-                                  margin:
-                                      const EdgeInsets.symmetric(horizontal: 5.0),
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(screenWidth / 40),
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
+                child: Padding(
+                  padding: EdgeInsets.all(screenWidth / 45),
+                  child: Container(
+                      height: screenHeight / 10,
+                      width: screenWidth,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFFF4F4F4),
+                        borderRadius: BorderRadius.circular(screenWidth / 45),
+                      ),
+                      child: CarouselSlider(
+                        items: imagePaths.map((imagePath) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                width: screenWidth,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 1.0),
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.circular(screenWidth / 45),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(screenWidth / 72),
+                                      child: SizedBox(
                                         height: screenHeight / 6,
-                                        width: screenWidth / 3,
+                                        width: screenWidth / 5,
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(
                                               screenWidth / 40),
@@ -121,73 +120,74 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(width: screenWidth / 30),
-                    
-                                      // Text container
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  top: screenHeight / 80),
-                                              child: Container(
-                                                height: screenHeight / 35,
-                                                width: screenWidth / 5,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.red,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            screenWidth / 65)),
-                                                child: Center(
-                                                    child: Text(
-                                                  "HOT NEWS",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: screenWidth / 32,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                )),
-                                              ),
+                                    ),
+                                    SizedBox(width: screenWidth / 30),
+
+                                    // Text container
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: screenHeight / 80),
+                                            child: Container(
+                                              height: screenHeight / 38,
+                                              width: screenWidth / 5,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.red,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          screenWidth / 65)),
+                                              child: Center(
+                                                  child: Text(
+                                                "HOT NEWS",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: screenWidth / 35,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              )),
                                             ),
-                                            SizedBox(height: screenHeight / 100),
-                                            Text(
-                                              "'I recommend to stay calm!' | Jurgen Klopp  ",
-                                              style: TextStyle(
-                                                fontSize: screenWidth / 32,
-                                                fontWeight: FontWeight.w400,
-                                              ),
+                                          ),
+                                          // SizedBox(
+                                          //     height: screenHeight / 80),
+                                          Text(
+                                            "'I recommend to stay calm!' | Jurgen Klopp  ",
+                                            style: TextStyle(
+                                              fontSize: screenWidth / 32,
+                                              fontWeight: FontWeight.w400,
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            );
-                          }).toList(),
-                          options: CarouselOptions(
-                            height: screenHeight / 3, 
-                            aspectRatio: 16 / 9,
-                            viewportFraction: 0.95,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            reverse: false,
-                            autoPlay: true,
-                            autoPlayInterval: const Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                const Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            enlargeCenterPage: true,
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        )),
-                  ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        }).toList(),
+                        options: CarouselOptions(
+                          height: screenHeight / 3,
+                          aspectRatio: 16 / 9,
+                          viewportFraction: 0.95,
+                          initialPage: 0,
+                          enableInfiniteScroll: true,
+                          reverse: false,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      )),
                 ),
               ),
-              SizedBox(height: screenHeight / 50),
+              SizedBox(height: screenHeight / 45),
               ServiceWidget(
                   screenWidth: screenWidth, screenHeight: screenHeight),
               HomeTextWidget(
