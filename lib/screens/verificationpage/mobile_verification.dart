@@ -55,13 +55,24 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 15),
                       child: SizedBox(
-                          height: screenHeight / 25,
-                          width: screenWidth / 5,
-                          child: TextFormField(
-                            readOnly: true,
-                            textAlign: TextAlign.center,
-                            decoration: const InputDecoration(hintText: '+91'),
-                          )),
+                        height: screenHeight / 25,
+                        width: screenWidth / 5,
+                        child: TextFormField(
+                          readOnly: true,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            hintText: '+91',
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.all(screenWidth / 100),
+                              child: Image.asset(
+                                'lib/asset/img/Rectangle 116.png',
+                                width: screenWidth / 20,
+                                height: screenHeight / 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: screenWidth / 15,
@@ -84,13 +95,14 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                             ),
                           ),
                           counterText: '',
-                          contentPadding:
-                              EdgeInsets.symmetric(vertical: screenHeight / 65),
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: screenHeight / 65,
+                          ),
                         ),
                       ),
                     ),
                   ],
-                ),
+                )
               ],
             ),
             const Spacer(),

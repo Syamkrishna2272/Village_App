@@ -76,7 +76,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: screenHeight / 25),
+                SizedBox(height: screenHeight / 35),
                 const Text(
                   "Enter Last Name",
                   style: TextStyle(fontWeight: FontWeight.w600),
@@ -84,8 +84,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 SizedBox(height: screenHeight / 80),
                 TextFormField(
                   textCapitalization: TextCapitalization.words,
-                  inputFormatters: [ 
-                    FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')), 
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
                   ],
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -116,7 +116,9 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.blue),
                           borderRadius: BorderRadius.circular(screenWidth / 40),
-                          color: Colors.transparent,
+                          color: _selectedGender == 'Male'
+                              ? const Color.fromARGB(255, 217, 229, 244)
+                              : Colors.transparent,
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -127,7 +129,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                                 child: Radio<String>(
                                   value: 'Male',
                                   groupValue: _selectedGender,
-                                  activeColor: const Color(0XFF427ECC), 
+                                  activeColor: const Color(0XFF427ECC),
                                   onChanged: (value) {
                                     setState(() {
                                       _selectedGender = value!;
@@ -135,7 +137,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                                   },
                                 ),
                               ),
-                               Text('Male',
+                              Text('Male',
                                   style: TextStyle(
                                       fontSize: screenWidth / 25,
                                       fontWeight: FontWeight.w600)),
@@ -148,10 +150,12 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blue),
-                          borderRadius: BorderRadius.circular(screenWidth / 40),
-                          color: Colors.transparent,
-                        ),
+                            border: Border.all(color: Colors.blue),
+                            borderRadius:
+                                BorderRadius.circular(screenWidth / 40),
+                            color: _selectedGender == 'Female'
+                                ? const Color.fromARGB(255, 217, 229, 244)
+                                : Colors.transparent),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Row(
