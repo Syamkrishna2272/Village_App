@@ -75,13 +75,17 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                         textAlign: TextAlign.start,
                         style: TextStyle(fontSize: screenWidth / 23),
                         decoration: InputDecoration(
-                          suffixIcon: Icon(
-                            Icons.close,
-                            size: screenWidth / 20,
+                          suffixIcon: Padding(
+                            padding: EdgeInsets.all(screenWidth / 50),
+                            child: Image.asset(
+                              'lib/asset/img/cancel.png',
+                              width: screenWidth / 20,
+                              height: screenWidth / 20,
+                            ),
                           ),
                           counterText: '',
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: screenHeight / 65),
+                          contentPadding:
+                              EdgeInsets.symmetric(vertical: screenHeight / 65),
                         ),
                       ),
                     ),
