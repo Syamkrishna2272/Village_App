@@ -5,6 +5,7 @@ import 'package:village_app/view/screens/homepage/widget/office_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/quick_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/home_screen_servicewidget.dart';
+import 'package:village_app/view/screens/userprofilepage/user_profile_details.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -60,8 +61,16 @@ class HomeScreen extends StatelessWidget {
               size: screenWidth / 15,
             ),
             SizedBox(width: screenWidth / 40),
-            const CircleAvatar(
-              backgroundImage: AssetImage('lib/asset/img/Ellipse 52.png'),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const UserProfileScreen();
+                }));
+              },
+              child: const CircleAvatar(
+                backgroundImage: AssetImage('lib/asset/img/Ellipse 52.png'),
+              ),
             )
           ],
         ),

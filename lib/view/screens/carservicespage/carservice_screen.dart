@@ -5,7 +5,7 @@ import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
 class CarServiceScreen extends StatelessWidget {
   final List<Map<String, dynamic>> contactData = [
     {'image': 'lib/asset/img/Ellipse 18.png', 'text': 'Robert Fox'},
-    {'image': 'lib/asset/img/Ellipse 24.png', 'text': 'Leslie Alexander Lore'},
+    {'image': 'lib/asset/img/Ellipse 24.png', 'text': 'Leslie Alexander Lor'},
     {'image': 'lib/asset/img/Ellipse 25.png', 'text': 'Kristin Watson'},
     {'image': 'lib/asset/img/Ellipse 30.png', 'text': 'Ralph Edwards'},
     {'image': 'lib/asset/img/Ellipse 31.png', 'text': 'Ralph Edwards'},
@@ -115,7 +115,7 @@ class CarServiceScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       fontSize: screenWidth / 25,
                                     ),
-                                    overflow: TextOverflow.ellipsis,
+                                    overflow: TextOverflow.ellipsis, 
                                     maxLines: 1,
                                   ),
                                 ],

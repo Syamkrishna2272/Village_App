@@ -7,6 +7,7 @@ class ButtonWidget extends StatelessWidget {
   final String text;
   final double fontSize;
   final IconData? icon;
+  final Image? images; // Image property to hold the image widget
   final Color? iconColor;
   final double? width;
   final Color textColor;
@@ -22,6 +23,7 @@ class ButtonWidget extends StatelessWidget {
     this.icon,
     this.iconColor,
     this.width,
+    this.images,
     required this.textColor,
     required this.onPressed,
   });
@@ -40,13 +42,20 @@ class ButtonWidget extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (icon != null)
+          if (images != null) // Check if an image is provided
+            Container(
+              width: 24, // Set a fixed width for the image
+              height: 24, // Set a fixed height for the image
+              child: images, // Use the provided image
+            ),
+          if (images != null) SizedBox(width: screenWidth / 50), // Space between image and text
+          if (icon != null) // Check if an icon is provided
             Icon(
               icon,
-              color: iconColor ?? Colors.black, //
+              color: iconColor ?? Colors.black,
               size: screenWidth / 20,
             ),
-          if (icon != null) SizedBox(width: screenWidth / 50),
+          if (icon != null) SizedBox(width: screenWidth / 50), // Space between icon and text
           Text(
             text,
             style: TextStyle(
