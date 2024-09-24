@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/carservicespage/carservice_screen.dart';
-import 'package:village_app/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/view/screens/carservicespage/carservice_screen.dart';
+import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
 
 class TaxiServiceScreen extends StatelessWidget {
   final List<Map<String, dynamic>> officeData = [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:village_app/screens/homepage/home_screen.dart';
-import 'package:village_app/screens/widgets/button_widget.dart';
+import 'package:village_app/view/screens/homepage/home_screen.dart';
+import 'package:village_app/view/widgets/button_widget.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   const UserDetailsScreen({super.key});

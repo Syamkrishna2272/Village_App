@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/taxiservicepage/taxiservice_screen.dart';
+import 'package:village_app/view/screens/taxiservicepage/taxiservice_screen.dart';
 
 class QuickAccessWidget extends StatelessWidget {
   final List<Map<String, dynamic>> quickaccessData = [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/detailspage/userdetails.dart';
+import 'package:village_app/view/screens/detailspage/userdetails.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
   const OtpVerificationScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/verificationpage/mobile_verification.dart';
-import 'package:village_app/screens/widgets/button_widget.dart';
+import 'package:village_app/view/screens/verificationpage/mobile_verification.dart';
+import 'package:village_app/view/widgets/button_widget.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});

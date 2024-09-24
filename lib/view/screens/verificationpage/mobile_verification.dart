@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:village_app/screens/otppage/otp_screen.dart';
-import 'package:village_app/screens/widgets/button_widget.dart';
-import 'package:village_app/screens/widgets/dialog_screen.dart'; // Make sure you import your ButtonWidget class.
+import 'package:village_app/view/screens/otppage/otp_screen.dart';
+import 'package:village_app/view/widgets/button_widget.dart';
+import 'package:village_app/view/widgets/dialog_screen.dart'; // Make sure you import your ButtonWidget class.
 
 class MobileNumberScreen extends StatefulWidget {
   const MobileNumberScreen({super.key});

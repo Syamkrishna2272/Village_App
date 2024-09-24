@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/intropage/intropage.dart';
+import 'package:village_app/view/screens/intropage/intropage.dart';
 
 void main() {
   runApp(const MyApp());

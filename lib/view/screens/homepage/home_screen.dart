@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:village_app/screens/homepage/widget/job_widget.dart';
-import 'package:village_app/screens/homepage/widget/office_widget.dart';
-import 'package:village_app/screens/homepage/widget/quick_widget.dart';
-import 'package:village_app/screens/homepage/widget/text_widget.dart';
-import 'package:village_app/screens/homepage/widget/home_screen_servicewidget.dart';
+import 'package:village_app/view/screens/homepage/widget/job_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/office_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/quick_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/home_screen_servicewidget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -172,8 +172,8 @@ class CarContactScreen extends StatelessWidget {
                         return Padding(
                           padding: EdgeInsets.only(right: screenWidth / 30),
                           child: Container(
-                            width: screenWidth / 6,
-                            height: screenWidth / 6,
+                            width: screenWidth / 6.5,
+                            height: screenWidth / 6.5,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
@@ -214,7 +214,7 @@ class CarContactScreen extends StatelessWidget {
                     ),
                     dividerColor: Colors.transparent,
                   ),
-                  SizedBox(height: screenHeight / 30),
+                  // SizedBox(height: screenHeight / 30),
                   TabbarWidget(
                       screenHeight: screenHeight, screenWidth: screenWidth),
                 ],
