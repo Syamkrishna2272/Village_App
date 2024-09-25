@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:village_app/view/screens/detailspage/userdetails.dart';
+import 'package:village_app/view/screens/userprofilepage/email_page.dart';
 
 class UserDataWidget extends StatelessWidget {
   const UserDataWidget({
@@ -84,14 +85,21 @@ class UserDataWidget extends StatelessWidget {
                   Text(
                     "Email Address",
                     style: TextStyle(
-                        fontSize: screenWidth / 25,
+                        fontSize: screenWidth / 25, 
                         fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    "afthaburahman313@gma.. ",
-                    style: TextStyle(fontSize: screenWidth / 30),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return const EmailScreen();
+                      }));
+                    },
+                    child: Text(
+                      "afthaburahman313@gma.. ",
+                      style: TextStyle(fontSize: screenWidth / 30),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
                   )
                 ],
               ),
