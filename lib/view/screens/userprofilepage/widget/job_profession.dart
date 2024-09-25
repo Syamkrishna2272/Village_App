@@ -102,7 +102,10 @@ class _JobOrProfessionScreenState extends State<JobOrProfessionScreen> {
                       fontSize: screenWidth / 30,
                       color: const Color.fromARGB(255, 135, 146, 142),
                     ),
-                    suffixIcon: const Icon(Icons.search),
+                    suffixIcon: Icon(
+                      Icons.search,
+                      size: screenWidth / 12,
+                    ),
                     suffixIconColor: const Color(0XFF427ECC),
                   ),
                 ),
@@ -165,7 +168,7 @@ class _JobOrProfessionScreenState extends State<JobOrProfessionScreen> {
                     );
                   },
                 ),
-                SizedBox(height: screenHeight/15),
+                SizedBox(height: screenHeight / 15),
                 SizedBox(
                     width: double.infinity,
                     child: Row(
@@ -209,10 +212,10 @@ class _JobOrProfessionScreenState extends State<JobOrProfessionScreen> {
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           )),
-                        ) 
+                        )
                       ],
                     )),
-                    SizedBox(height: screenHeight/15),
+                SizedBox(height: screenHeight / 15),
               ],
             ),
           ),
