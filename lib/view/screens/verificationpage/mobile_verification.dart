@@ -14,10 +14,12 @@ class MobileNumberScreen extends StatefulWidget {
 class _MobileNumberScreenState extends State<MobileNumberScreen> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      showMobileNumberDialog(context);
-    });
     super.initState();
+    if (!widget.userDataWidget) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        showMobileNumberDialog(context);
+      });
+    }
   }
 
   @override
@@ -31,9 +33,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
         automaticallyImplyLeading: false,
         title: Center(
             child: Text(
-          widget.userDataWidget
-              ? 'Phone Number ?'
-              : 'What is your Phone number',
+          widget.userDataWidget ? 'Phone Number' : 'What is your Phone number',
           style:
               const TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         )),
@@ -53,9 +53,12 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                     left: screenWidth / 15,
                     top: screenHeight / 20,
                   ),
-                  child: Text(widget.userDataWidget
-                      ? " Phone Number"
-                      : "Enter Phone Number"),
+                  child: Text(
+                    widget.userDataWidget
+                        ? " Phone Number"
+                        : "Enter Phone Number",
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                  ),
                 ),
                 SizedBox(
                   height: screenHeight / 30,
@@ -64,110 +67,61 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 15),
-                      child: widget.userDataWidget
-                          ? SizedBox(
-                              height: screenHeight / 15,
-                              width: screenWidth / 4.2,
-                              child: TextFormField(
-                                readOnly: true,
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(
-                                          screenWidth / 45),
-                                      borderSide: const BorderSide(
-                                          color: Color(0XFFD2D2D2))),
-                                  hintText: '+91',
-                                  prefixIcon: Padding(
-                                    padding: EdgeInsets.all(screenWidth / 100),
-                                    child: Image.asset(
-                                      'lib/asset/img/Rectangle 116.png',
-                                      width: screenWidth / 20,
-                                      height: screenHeight / 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          : SizedBox(
-                              height: screenHeight / 25,
-                              width: screenWidth / 5,
-                              child: TextFormField(
-                                readOnly: true,
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                  hintText: '+91',
-                                  prefixIcon: Padding(
-                                    padding: EdgeInsets.all(screenWidth / 100),
-                                    child: Image.asset(
-                                      'lib/asset/img/Rectangle 116.png',
-                                      width: screenWidth / 20,
-                                      height: screenHeight / 20,
-                                    ),
-                                  ),
-                                ),
+                      child: SizedBox(
+                        height: screenHeight / 25,
+                        width: screenWidth / 5,
+                        child: TextFormField(
+                          readOnly: true,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            hintText: '+91',
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.all(screenWidth / 100),
+                              child: Image.asset(
+                                'lib/asset/img/Rectangle 116.png',
+                                width: screenWidth / 20,
+                                height: screenHeight / 20,
                               ),
                             ),
+                          ),
+                        ),
+                      ),
                     ),
                     SizedBox(
-                      width: screenWidth / 15,
+                      width: screenWidth / 35,
                     ),
                     SizedBox(
                       height: screenHeight / 25,
-                      width: screenWidth / 1.8,
-                      child: widget.userDataWidget
-                          ? TextField(
-                              keyboardType: TextInputType.number,
-                              maxLength: 10,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(fontSize: screenWidth / 23),
-                              decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(screenWidth / 45),
-                                    borderSide: const BorderSide(
-                                        color: Color(0XFFD2D2D2))),
-                                suffixIcon: Padding(
-                                  padding: EdgeInsets.all(screenWidth / 50),
-                                  child: Image.asset(
-                                    'lib/asset/img/cancel.png',
-                                    width: screenWidth / 20,
-                                    height: screenWidth / 20,
-                                  ),
-                                ),
-                                counterText: '',
-                                contentPadding: EdgeInsets.symmetric(
-                                  vertical: screenHeight / 65,
-                                ),
-                              ),
-                            )
-                          : TextField(
-                              keyboardType: TextInputType.number,
-                              maxLength: 10,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(fontSize: screenWidth / 23),
-                              decoration: InputDecoration(
-                                suffixIcon: Padding(
-                                  padding: EdgeInsets.all(screenWidth / 50),
-                                  child: Image.asset(
-                                    'lib/asset/img/cancel.png',
-                                    width: screenWidth / 20,
-                                    height: screenWidth / 20,
-                                  ),
-                                ),
-                                counterText: '',
-                                contentPadding: EdgeInsets.symmetric(
-                                  vertical: screenHeight / 65,
-                                ),
-                              ),
+                      width: screenWidth / 1.6,
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        maxLength: 10,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: screenWidth / 23),
+                        decoration: InputDecoration(
+                          suffixIcon: Padding(
+                            padding: EdgeInsets.all(screenWidth / 50),
+                            child: Image.asset(
+                              'lib/asset/img/cancel.png',
+                              width: screenWidth / 20,
+                              height: screenWidth / 20,
                             ),
+                          ),
+                          counterText: '',
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: screenHeight / 65,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 )
               ],
             ),
             const Spacer(),
-            const Text("We are send a verification code to this number"),
+            Text(widget.userDataWidget
+                ? ""
+                : "We are send a verification code to this number"),
             SizedBox(
               height: screenHeight / 42,
             ),
@@ -179,20 +133,66 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               ),
               child: SizedBox(
                 width: double.infinity,
-                child: ButtonWidget(
-                  screenHeight: screenHeight,
-                  screenWidth: screenWidth,
-                  buttonColor: const Color(0xFF427ECC),
-                  text: "Continue",
-                  fontSize: screenWidth / 28,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return const OtpVerificationScreen();
-                    }));
-                  },
-                ),
+                child: widget.userDataWidget
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              height: screenHeight / 17,
+                              width: screenWidth / 2.4,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color(0XFF427ECC)),
+                                  borderRadius:
+                                      BorderRadius.circular(screenWidth / 45)),
+                              child: const Center(
+                                  child: Text(
+                                "Cancel",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0XFF427ECC)),
+                              )),
+                            ),
+                          ),
+                          // Update Button
+                          Container(
+                            height: screenHeight / 17,
+                            width: screenWidth / 2.4,
+                            decoration: BoxDecoration(
+                                color: const Color(0XFF427ECC),
+                                border:
+                                    Border.all(color: const Color(0XFF427ECC)),
+                                borderRadius:
+                                    BorderRadius.circular(screenWidth / 45)),
+                            child: const Center(
+                                child: Text(
+                              "Update",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
+                            )),
+                          )
+                        ],
+                      )
+                    : ButtonWidget(
+                        screenHeight: screenHeight,
+                        screenWidth: screenWidth,
+                        buttonColor: const Color(0xFF427ECC),
+                        text: "Continue",
+                        fontSize: screenWidth / 28,
+                        textColor: Colors.white,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) {
+                              return const OtpVerificationScreen();
+                            }),
+                          );
+                        },
+                      ),
               ),
             ),
           ],

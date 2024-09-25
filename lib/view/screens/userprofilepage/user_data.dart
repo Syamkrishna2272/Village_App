@@ -123,7 +123,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                       SizedBox(width: screenWidth / 3),
                       GestureDetector(
                         onTap: () {
-                          _showBloodGroupBottomSheet(context, screenWidth);
+                          showBloodGroupBottomSheet(context, screenWidth);
                         },
                         child: Text(
                           "A+ve",
@@ -199,7 +199,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
     );
   }
 
-  void _showBloodGroupBottomSheet(BuildContext context, double screenWidth) {
+  void showBloodGroupBottomSheet(BuildContext context, double screenWidth) {
     showModalBottomSheet(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
