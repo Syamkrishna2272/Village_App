@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:village_app/view/screens/homepage/home_screen.dart';
 import 'package:village_app/view/widgets/button_widget.dart';
 
 class UserDetailsScreen extends StatefulWidget {
-  const UserDetailsScreen({super.key});
+  final bool fromUserDataWidget;
+  const UserDetailsScreen({super.key, this.fromUserDataWidget = false});
 
   @override
   State<UserDetailsScreen> createState() => _UserDetailsScreenState();
@@ -22,9 +24,9 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Center(
+        title: Center(
           child: Text(
-            'Basic Details',
+            widget.fromUserDataWidget ? 'Full Name' : 'Basic Details',
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
           ),
         ),
@@ -189,20 +191,66 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: ButtonWidget(
-                    screenHeight: screenHeight,
-                    screenWidth: screenWidth,
-                    buttonColor: const Color(0xFF427ECC),
-                    text: "Continue",
-                    fontSize: screenWidth / 28,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const HomeScreen();
-                      }));
-                    },
-                  ),
+                  child: widget.fromUserDataWidget
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Container(
+                                height: screenHeight / 17,
+                                width: screenWidth / 2.4,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: const Color(0XFF427ECC)),
+                                    borderRadius: BorderRadius.circular(
+                                        screenWidth / 45)),
+                                child: const Center(
+                                    child: Text(
+                                  "Cancel",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0XFF427ECC)),
+                                )),
+                              ),
+                            ),
+                            // Update Button
+                            Container(
+                              height: screenHeight / 17,
+                              width: screenWidth / 2.4,
+                              decoration: BoxDecoration(
+                                  color: const Color(0XFF427ECC),
+                                  border: Border.all(
+                                      color: const Color(0XFF427ECC)),
+                                  borderRadius:
+                                      BorderRadius.circular(screenWidth / 45)),
+                              child: const Center(
+                                  child: Text(
+                                "Update",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white),
+                              )),
+                            )
+                          ],
+                        )
+                      : ButtonWidget(
+                          screenHeight: screenHeight,
+                          screenWidth: screenWidth,
+                          buttonColor: const Color(0xFF427ECC),
+                          text: "Continue",
+                          fontSize: screenWidth / 28,
+                          textColor: Colors.white,
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) {
+                                return const HomeScreen();
+                              }),
+                            );
+                          },
+                        ),
                 ),
               ],
             ),

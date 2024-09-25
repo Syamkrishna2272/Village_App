@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/view/screens/detailspage/userdetails.dart';
 
 class UserDataWidget extends StatelessWidget {
   const UserDataWidget({
@@ -34,9 +35,19 @@ class UserDataWidget extends StatelessWidget {
                         fontSize: screenWidth / 25,
                         fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    "Afthabu Rahman",
-                    style: TextStyle(fontSize: screenWidth / 30),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const UserDetailsScreen(
+                          fromUserDataWidget: true,
+                        );
+                      }));
+                    },
+                    child: Text(
+                      "Afthabu Rahman",
+                      style: TextStyle(fontSize: screenWidth / 30),
+                    ),
                   )
                 ],
               ),
