@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:village_app/view/screens/detailspage/userdetails.dart';
 import 'package:village_app/view/screens/userprofilepage/email_page.dart';
+import 'package:village_app/view/screens/userprofilepage/widget/job_profession.dart';
+import 'package:village_app/view/screens/verificationpage/mobile_verification.dart';
 
 class UserDataWidget extends StatelessWidget {
   const UserDataWidget({
@@ -67,9 +69,16 @@ class UserDataWidget extends StatelessWidget {
                         fontSize: screenWidth / 25,
                         fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    "+91 8606200441",
-                    style: TextStyle(fontSize: screenWidth / 30),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return const MobileNumberScreen(userDataWidget: true,);
+                      }));
+                    },
+                    child: Text(
+                      "+91 8606200441",
+                      style: TextStyle(fontSize: screenWidth / 30),
+                    ),
                   )
                 ],
               ),
@@ -139,9 +148,16 @@ class UserDataWidget extends StatelessWidget {
                         fontSize: screenWidth / 25,
                         fontWeight: FontWeight.w600),
                   ),
-                  Text(
-                    "UI Designer",
-                    style: TextStyle(fontSize: screenWidth / 30),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return  JobOrProfessionScreen();
+                      }));
+                    },
+                    child: Text(
+                      "UI Designer",
+                      style: TextStyle(fontSize: screenWidth / 30),
+                    ),
                   )
                 ],
               ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:village_app/view/screens/otppage/otp_screen.dart';
 import 'package:village_app/view/widgets/button_widget.dart';
-import 'package:village_app/view/widgets/dialog_screen.dart'; // Make sure you import your ButtonWidget class.
+import 'package:village_app/view/widgets/dialog_screen.dart';
 
 class MobileNumberScreen extends StatefulWidget {
-  const MobileNumberScreen({super.key});
+  final bool userDataWidget;
+  const MobileNumberScreen({super.key, this.userDataWidget = false});
 
   @override
   State<MobileNumberScreen> createState() => _MobileNumberScreenState();
@@ -29,23 +29,33 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
       backgroundColor: const Color(0xFFFFFBFE),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Center(
+        title: Center(
             child: Text(
-          'What is your number ?',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          widget.userDataWidget
+              ? 'Phone Number ?'
+              : 'What is your Phone number',
+          style:
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         )),
       ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            if (widget.userDataWidget == true)
+              const Text("When updating your phone number, confirmation "),
+            const Text("by OTP will be required."),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: screenWidth / 15, top: screenHeight / 20),
-                  child: const Text("Enter Phone Number"),
+                    left: screenWidth / 15,
+                    top: screenHeight / 20,
+                  ),
+                  child: Text(widget.userDataWidget
+                      ? " Phone Number"
+                      : "Enter Phone Number"),
                 ),
                 SizedBox(
                   height: screenHeight / 30,
@@ -54,52 +64,103 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 15),
-                      child: SizedBox(
-                        height: screenHeight / 25,
-                        width: screenWidth / 5,
-                        child: TextFormField(
-                          readOnly: true,
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            hintText: '+91',
-                            prefixIcon: Padding(
-                              padding: EdgeInsets.all(screenWidth / 100),
-                              child: Image.asset(
-                                'lib/asset/img/Rectangle 116.png',
-                                width: screenWidth / 20,
-                                height: screenHeight / 20,
+                      child: widget.userDataWidget
+                          ? SizedBox(
+                              height: screenHeight / 15,
+                              width: screenWidth / 4.2,
+                              child: TextFormField(
+                                readOnly: true,
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          screenWidth / 45),
+                                      borderSide: const BorderSide(
+                                          color: Color(0XFFD2D2D2))),
+                                  hintText: '+91',
+                                  prefixIcon: Padding(
+                                    padding: EdgeInsets.all(screenWidth / 100),
+                                    child: Image.asset(
+                                      'lib/asset/img/Rectangle 116.png',
+                                      width: screenWidth / 20,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          : SizedBox(
+                              height: screenHeight / 25,
+                              width: screenWidth / 5,
+                              child: TextFormField(
+                                readOnly: true,
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                  hintText: '+91',
+                                  prefixIcon: Padding(
+                                    padding: EdgeInsets.all(screenWidth / 100),
+                                    child: Image.asset(
+                                      'lib/asset/img/Rectangle 116.png',
+                                      width: screenWidth / 20,
+                                      height: screenHeight / 20,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       width: screenWidth / 15,
                     ),
                     SizedBox(
                       height: screenHeight / 25,
-                      width: screenWidth / 1.6,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        maxLength: 10,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: screenWidth / 23),
-                        decoration: InputDecoration(
-                          suffixIcon: Padding(
-                            padding: EdgeInsets.all(screenWidth / 50),
-                            child: Image.asset(
-                              'lib/asset/img/cancel.png',
-                              width: screenWidth / 20,
-                              height: screenWidth / 20,
+                      width: screenWidth / 1.8,
+                      child: widget.userDataWidget
+                          ? TextField(
+                              keyboardType: TextInputType.number,
+                              maxLength: 10,
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: screenWidth / 23),
+                              decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(screenWidth / 45),
+                                    borderSide: const BorderSide(
+                                        color: Color(0XFFD2D2D2))),
+                                suffixIcon: Padding(
+                                  padding: EdgeInsets.all(screenWidth / 50),
+                                  child: Image.asset(
+                                    'lib/asset/img/cancel.png',
+                                    width: screenWidth / 20,
+                                    height: screenWidth / 20,
+                                  ),
+                                ),
+                                counterText: '',
+                                contentPadding: EdgeInsets.symmetric(
+                                  vertical: screenHeight / 65,
+                                ),
+                              ),
+                            )
+                          : TextField(
+                              keyboardType: TextInputType.number,
+                              maxLength: 10,
+                              textAlign: TextAlign.start,
+                              style: TextStyle(fontSize: screenWidth / 23),
+                              decoration: InputDecoration(
+                                suffixIcon: Padding(
+                                  padding: EdgeInsets.all(screenWidth / 50),
+                                  child: Image.asset(
+                                    'lib/asset/img/cancel.png',
+                                    width: screenWidth / 20,
+                                    height: screenWidth / 20,
+                                  ),
+                                ),
+                                counterText: '',
+                                contentPadding: EdgeInsets.symmetric(
+                                  vertical: screenHeight / 65,
+                                ),
+                              ),
                             ),
-                          ),
-                          counterText: '',
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: screenHeight / 65,
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 )

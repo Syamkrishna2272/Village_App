@@ -27,7 +27,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         title: Center(
           child: Text(
             widget.fromUserDataWidget ? 'Full Name' : 'Basic Details',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
           ),
         ),
       ),
@@ -196,7 +196,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             GestureDetector(
-                              onTap: () {
+                              onTap: () { 
                                 Navigator.of(context).pop();
                               },
                               child: Container(
@@ -205,8 +205,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                         color: const Color(0XFF427ECC)),
-                                    borderRadius: BorderRadius.circular(
-                                        screenWidth / 45)),
+                                    borderRadius:
+                                        BorderRadius.circular(screenWidth / 45)),
                                 child: const Center(
                                     child: Text(
                                   "Cancel",
