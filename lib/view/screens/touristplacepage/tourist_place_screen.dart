@@ -46,14 +46,15 @@ class TouristPlaceScreen extends StatelessWidget {
                 paddingTop: screenWidth / 20),
             SizedBox(height: screenHeight / 50),
             GestureDetector(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return const SpecificTouristSpot();
                 }));
               },
               child: TouristCardWidget(
-                screenWidth: screenWidth, 
-                screenHeight: screenHeight, 
+                screenWidth: screenWidth,
+                screenHeight: screenHeight,
                 icontext: '10 AM to 6 PM',
                 imagePath: 'lib/asset/img/Rectangle 210.png',
                 titleText:

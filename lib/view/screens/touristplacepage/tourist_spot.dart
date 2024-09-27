@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/view/screens/touristplacepage/widget/images_widget.dart';
 
 class SpecificTouristSpot extends StatelessWidget {
   const SpecificTouristSpot({super.key});
@@ -32,118 +33,186 @@ class SpecificTouristSpot extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              height: screenHeight / 3, // Main container height
-              width: screenWidth, // Full width
-              color: Colors.transparent, // No color for background
-              child: Row(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ImagesWidget(
+                  screenHeight: screenHeight, screenWidth: screenWidth),
+              SizedBox(height: screenHeight / 55),
+              Column(
                 children: [
-                  // Left large image (half width)
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              'https://via.placeholder.com/400x400'), // Replace with your image URL
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                  Padding(
+                    padding: EdgeInsets.only(left: screenWidth / 25),
+                    child: Text(
+                      'കുതിരവട്ടം പപ്പു മുതൽ എംടി വരെ; പുതുമുഖം തീർത്ത് കോഴിക്കോട് ബീച്ച്',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: screenWidth / 23),
                     ),
                   ),
-                  // Right side grid of smaller images
-                  Expanded(
-                    flex: 1,
-                    child: Column(
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: screenWidth / 45,
+                        horizontal: screenWidth / 28),
+                    child: Row(
                       children: [
-                        // Top row with two images
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://via.placeholder.com/200x200'), // Replace with your image URL
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://via.placeholder.com/200x200'), // Replace with your image URL
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        Text(
+                          "Added by Mujeeb Kaipakil",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: screenWidth / 32),
                         ),
-                        // Bottom row with image and "+5" overlay
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://via.placeholder.com/200x200'), // Replace with your image URL
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Stack(
-                                  fit: StackFit.expand,
-                                  children: [
-                                    Container(
-                                      decoration: const BoxDecoration(
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                              'https://via.placeholder.com/200x200'), // Replace with your image URL
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    // Add overlay with +5 text
-                                    Container(
-                                      color: Colors.black.withOpacity(0.5),
-                                      child: const Center(
-                                        child: Text(
-                                          "+5",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                        Icon(
+                          Icons.check_circle_outline,
+                          size: screenWidth / 25,
                         ),
+                        SizedBox(width: screenWidth / 18),
+                        Text("12-04-2023",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: screenWidth / 33))
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenWidth / 25, right: screenWidth / 25),
+                child: Container(
+                  height: screenHeight / 13,
+                  width: screenWidth,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(screenWidth / 45),
+                      color: const Color(0XFFF7F4F6)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(
+                        Icons.check_circle_outline,
+                        size: screenWidth / 25,
+                      ),
+                      const Text(
+                        "Opening Time",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 91, 89, 89)),
+                      ),
+                      Text(
+                        "10 AM to 6 PM except sunday",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: screenWidth / 30),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: screenHeight / 85),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenWidth / 25, right: screenWidth / 25),
+                child: Container(
+                  height: screenHeight / 13,
+                  width: screenWidth,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(screenWidth / 45),
+                      color: const Color(0XFFF7F4F6)),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: screenWidth / 20),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.newspaper,
+                          size: screenWidth / 25,
+                        ),
+                        SizedBox(width: screenWidth / 25),
+                        const Text(
+                          "Ticket",
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 91, 89, 89)),
+                        ),
+                        SizedBox(width: screenWidth / 2),
+                        Text(
+                          "Free Entry",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: screenWidth / 30),
+                        )
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+              SizedBox(height: screenHeight / 50),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenWidth / 25, right: screenWidth / 25),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: screenHeight / 17,
+                        decoration: BoxDecoration(
+                          color: const Color(0XFFD9E5F5),
+                          borderRadius: BorderRadius.circular(screenWidth / 40),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.map_outlined,
+                              color: Color(0XFF427ECC),
+                            ),
+                            Text(
+                              "View on Map",
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: screenWidth / 30),
+                    Expanded(
+                      child: Container(
+                        height: screenHeight / 17,
+                        decoration: BoxDecoration(
+                          color: const Color(0XFFFFE3E3),
+                          borderRadius: BorderRadius.circular(screenWidth / 40),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.message_outlined,
+                              color: Color(0XFFFB2828),
+                            ),
+                            Text(
+                              "Reviews",
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(screenWidth / 25),
+                child:
+                    const Text("""തിരുവനന്തപുരം ∙ മുഖ്യമന്ത്രി പിണറായി വിജയന്‍റെ
+മകൾ ടി.വീണയുടെ കമ്പനിയായ എക്സാലോജിക 
+കിനെതിരായ സാമ്പത്നെതിരെ നടക്കുന്ന റജിസ്ട്രാർ 
+ ഓഫ് കമ്പനീസിന്റെ (ആർഒസി) അന്വേഷണം സീര
+ ിയസ് ഫ്രോഡ് ഇൻവെസ്റ്റിഗേഷൻ. 
+ തിരുവനന്തപുരം ∙ മുഖ്യമന്ത്രി പിണറായി വിജയന്‍റെ മകൾ ടി.വീണയുടെ     
+കമ്പനിയായ എക്സാലോജിക ്കിനെതിരായ
+സാമ്പത്നെതിരെ നടക്കുന്ന റജിസ്ട്രാർ ഓഫ്
+കമ്പനീസിന്റെ (ആർഒസി) അന്വേഷണം സീര ിയസ് 
+ഫ്രോഡ് ഇൻവെസ്റ്റിഗേഷൻ."""),
+              )
+            ],
+          ),
         ),
       ),
     );
