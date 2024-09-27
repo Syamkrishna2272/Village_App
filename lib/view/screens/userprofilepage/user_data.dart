@@ -262,7 +262,12 @@ class _UserDataScreenState extends State<UserDataScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: Text(bloodGroup),
+          child: Text(
+            bloodGroup,
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: MediaQuery.sizeOf(context).width / 24),
+          ),
         ),
         Transform.scale(
           scale: 1.3,
