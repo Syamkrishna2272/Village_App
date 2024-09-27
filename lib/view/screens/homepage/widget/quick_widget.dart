@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:village_app/view/screens/taxiservicepage/taxiservice_screen.dart';
+import 'package:village_app/view/screens/touristplacepage/tourist_place_screen.dart';
 
 class QuickAccessWidget extends StatelessWidget {
   final List<Map<String, dynamic>> quickaccessData = [
@@ -48,11 +49,10 @@ class QuickAccessWidget extends StatelessWidget {
                     Color.fromARGB(255, 234, 244, 252),
                     Color.fromARGB(255, 247, 249, 251)
                   ],
-                  begin: Alignment.topCenter, 
+                  begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
-                borderRadius:
-                    BorderRadius.circular(screenWidth / 45), 
+                borderRadius: BorderRadius.circular(screenWidth / 45),
               ),
               child: Center(
                 child: Column(
@@ -88,6 +88,10 @@ class QuickAccessWidget extends StatelessWidget {
           return TaxiServiceScreen();
         }));
         break;
+      case 'Nearby Tourist Places':
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return const TouristPlaceScreen();
+        }));
     }
   }
 }

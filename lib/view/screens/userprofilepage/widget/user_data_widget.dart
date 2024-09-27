@@ -151,7 +151,7 @@ class UserDataWidget extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                        return  JobOrProfessionScreen();
+                        return  const JobOrProfessionScreen();
                       }));
                     },
                     child: Text(

@@ -99,7 +99,8 @@ class _JobOrProfessionScreenState extends State<JobOrProfessionScreen> {
                     ),
                     hintText: "Search a profession",
                     hintStyle: TextStyle(
-                      fontSize: screenWidth / 30,
+                      fontSize: screenWidth / 28,
+                      fontWeight: FontWeight.normal,
                       color: const Color.fromARGB(255, 135, 146, 142),
                     ),
                     suffixIcon: Icon(
@@ -121,7 +122,7 @@ class _JobOrProfessionScreenState extends State<JobOrProfessionScreen> {
                 SizedBox(height: screenHeight / 40),
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(), 
                   itemCount: professions.length,
                   itemBuilder: (context, index) {
                     return Padding(
