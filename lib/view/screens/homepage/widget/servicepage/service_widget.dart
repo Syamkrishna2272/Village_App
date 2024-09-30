@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/view/screens/homepage/widget/servicepage/newsportalpage/news_portal.dart';
 
 class ServiceWidget extends StatelessWidget {
   const ServiceWidget({
@@ -16,19 +17,16 @@ class ServiceWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding:  EdgeInsets.only(left: screenWidth/18),
+          padding: EdgeInsets.only(left: screenWidth / 18),
           child: Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: screenWidth / 2.3,
                 height: screenHeight / 13,
                 decoration: BoxDecoration(
                     color: const Color(0XFFF4F4F4),
-                    borderRadius: BorderRadius.circular(screenWidth / 45)
-                    ),
+                    borderRadius: BorderRadius.circular(screenWidth / 45)),
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
@@ -44,7 +42,9 @@ class ServiceWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: screenWidth/50,),
+              SizedBox(
+                width: screenWidth / 50,
+              ),
               Container(
                 width: screenWidth / 2.3,
                 height: screenHeight / 13,
@@ -74,32 +74,41 @@ class ServiceWidget extends StatelessWidget {
           height: screenHeight / 90,
         ),
         Padding(
-          padding: EdgeInsets.only(left: screenWidth/18),
-          child: Row( 
+          padding: EdgeInsets.only(left: screenWidth / 18),
+          child: Row(
             children: [
-              Container(
-                width: screenWidth / 2.3,
-                height: screenHeight / 13,
-                decoration: BoxDecoration(
-                   color: const Color(0XFFF4F4F4),
-                    borderRadius: BorderRadius.circular(screenWidth / 45)),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: screenWidth / 20),
-                      child: Image.asset('lib/asset/img/Group 619.png'),
-                    ),
-                    SizedBox(width: screenWidth / 50),
-                    Text(
-                      'News Portal',
-                      style: TextStyle(
-                          fontSize: screenWidth / 30,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                    return const NewsPortalScreen();
+                  }));
+                },
+                child: Container( 
+                  width: screenWidth / 2.3,
+                  height: screenHeight / 13,
+                  decoration: BoxDecoration(
+                      color: const Color(0XFFF4F4F4),
+                      borderRadius: BorderRadius.circular(screenWidth / 45)),
+                  child: Row(
+                    children: [ 
+                      Padding(
+                        padding: EdgeInsets.only(left: screenWidth / 20),
+                        child: Image.asset('lib/asset/img/Group 619.png'),
+                      ),
+                      SizedBox(width: screenWidth / 50),
+                      Text(
+                        'News Portal',
+                        style: TextStyle(
+                            fontSize: screenWidth / 30,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(width: screenWidth/50,),
+              SizedBox(
+                width: screenWidth / 50,
+              ),
               Container(
                 width: screenWidth / 2.3,
                 height: screenHeight / 13,
