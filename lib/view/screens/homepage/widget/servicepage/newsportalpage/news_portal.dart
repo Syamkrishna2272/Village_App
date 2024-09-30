@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:village_app/view/screens/homepage/widget/servicepage/news_description.dart';
 import 'package:village_app/view/screens/homepage/widget/servicepage/widget/newsportal_card_widget.dart';
 
 class NewsPortalScreen extends StatelessWidget {
@@ -61,16 +60,24 @@ class NewsPortalScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             const Center(
-              child: Text("data"),
+              child: Text("Sample screen"),
             ),
             // Add SingleChildScrollView here to make this section scrollable
             SingleChildScrollView(
               child: Column(
                 children: [
-                  NewsCardWidget(
-                    screenWidth: screenWidth,
-                    screenHeight: screenHeight,
-                    imagePath: 'lib/asset/img/Rectangle 170.png',
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const NewsDescriptionScreen();
+                      }));
+                    },
+                    child: NewsCardWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      imagePath: 'lib/asset/img/Rectangle 170.png',
+                    ),
                   ),
                   SizedBox(height: screenHeight / 100),
                   NewsCardWidget(
@@ -99,7 +106,7 @@ class NewsPortalScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Center(child: Text('Entertainment Content')),
+            const Center(child: Text('Sample Screen')),
           ],
         ),
       ),

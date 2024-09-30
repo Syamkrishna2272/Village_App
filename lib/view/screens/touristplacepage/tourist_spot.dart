@@ -11,27 +11,27 @@ class SpecificTouristSpot extends StatelessWidget {
     final screenWidth = mediaQuery.size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Calicut Beach",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        actions: [
-          Center(
-            child: Padding(
-              padding: EdgeInsets.only(right: screenWidth / 15),
-              child: const Text(
-                "Share",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0XFF427ECC),
+        appBar: AppBar(
+          title: const Text(
+            "Calicut Beach",
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
+          actions: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(right: screenWidth / 15),
+                child: const Text(
+                  "Share",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0XFF427ECC),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
