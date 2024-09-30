@@ -156,14 +156,15 @@ class SpecificTouristSpot extends StatelessWidget {
                           color: const Color(0XFFD9E5F5),
                           borderRadius: BorderRadius.circular(screenWidth / 40),
                         ),
-                        child: const Row(
+                        child:  Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(
-                              Icons.map_outlined,
-                              color: Color(0XFF427ECC),
-                            ),
-                            Text(
+                            Image.asset('lib/asset/img/Group 646.png'),
+                            // Icon(
+                            //   Icons.map_outlined,
+                            //   color: Color(0XFF427ECC),
+                            // ),
+                            const Text(
                               "View on Map",
                               style: TextStyle(fontWeight: FontWeight.w600),
                             )
@@ -179,14 +180,15 @@ class SpecificTouristSpot extends StatelessWidget {
                           color: const Color(0XFFFFE3E3),
                           borderRadius: BorderRadius.circular(screenWidth / 40),
                         ),
-                        child: const Row(
+                        child:  Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(
-                              Icons.message_outlined,
-                              color: Color(0XFFFB2828),
-                            ),
-                            Text(
+                            Image.asset('lib/asset/img/Review.png'),
+                            // Icon(
+                            //   Icons.message_outlined,
+                            //   color: Color(0XFFFB2828),
+                            // ),
+                            const Text(
                               "Reviews",
                               style: TextStyle(fontWeight: FontWeight.w600),
                             )

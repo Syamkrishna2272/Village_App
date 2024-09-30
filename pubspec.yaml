@@ -125,6 +125,8 @@ flutter:
     - lib/asset/img/Rectangle 128.png
     - lib/asset/img/Rectangle 169.png
     - lib/asset/img/Rectangle 193 (1).png
+    - lib/asset/img/Group 646.png
+    - lib/asset/img/Review.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

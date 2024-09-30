@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 
-class AllImagesScreen extends StatelessWidget {
+class AllImagesScreen extends StatefulWidget {
   const AllImagesScreen({super.key});
+
+  @override
+  State<AllImagesScreen> createState() => _AllImagesScreenState();
+}
+
+class _AllImagesScreenState extends State<AllImagesScreen> {
+  final List<String> images = [
+    'lib/asset/img/Rectangle 169.png',
+    'lib/asset/img/Rectangle 128.png',
+    'lib/asset/img/Rectangle 193 (1).png',
+    'lib/asset/img/Rectangle 213.png',
+  ];
+
+  String selectedImage = 'lib/asset/img/Rectangle 128.png';
 
   @override
   Widget build(BuildContext context) {
@@ -9,18 +23,11 @@ class AllImagesScreen extends StatelessWidget {
     final screenHeight = mediaQuery.size.height;
     final screenWidth = mediaQuery.size.width;
 
-    final List<String> images = [
-      'lib/asset/img/Rectangle 169.png',
-      'lib/asset/img/Rectangle 128.png',
-      'lib/asset/img/Rectangle 193 (1).png',
-      'lib/asset/img/Rectangle 213.png',
-    ];
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          "All Images",
+          "Calicut Beach",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
@@ -31,9 +38,9 @@ class AllImagesScreen extends StatelessWidget {
             Container(
               height: screenHeight / 2,
               width: screenWidth,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('lib/asset/img/Rectangle 128.png'),
+                  image: AssetImage(selectedImage),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -51,22 +58,29 @@ class AllImagesScreen extends StatelessWidget {
                       return Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: screenWidth / 55),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.white, // Border color
-                              width: 2.0, // Border width
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedImage = images[index];
+                            });
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.white, // Border color
+                                width: 1,
+                              ),
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth / 45),
                             ),
-                            borderRadius:
-                                BorderRadius.circular(screenWidth / 45),
-                          ),
-                          child: ClipRRect(
-                            borderRadius:
-                                BorderRadius.circular(screenWidth / 45),
-                            child: Image.asset(
-                              images[index],
-                              width: screenWidth / 5.5,
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth / 45),
+                              child: Image.asset(
+                                images[index],
+                                width: screenWidth / 5.5,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
