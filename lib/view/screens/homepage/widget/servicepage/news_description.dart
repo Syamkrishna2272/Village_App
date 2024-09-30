@@ -33,7 +33,7 @@ class NewsDescriptionScreen extends StatelessWidget {
       body: SafeArea(
           child: Column(
         children: [
-          Container(
+          SizedBox(
             height: screenHeight / 5,
             width: screenWidth,
             child: Image.asset(
@@ -46,17 +46,17 @@ class NewsDescriptionScreen extends StatelessWidget {
             child: Text(
               """മുഖ്യമന്ത്രിയുടെ മകൾ വീണയ്‌ക്ക് കുരുക്ക്; അന്വേഷണം എസ്എഫ്ഐഒയ്ക്ക് ....""",
               style: TextStyle(
-                  fontSize: screenWidth / 25, fontWeight: FontWeight.w600),
+                  fontSize: screenWidth / 24.2, fontWeight: FontWeight.w600),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: screenWidth / 31),
+            padding: EdgeInsets.only(left: screenWidth / 35),
             child: Row(
               children: [
                 Text(
                   "Katharammal News",
                   style: TextStyle(
-                      fontSize: screenWidth / 32, fontWeight: FontWeight.w500),
+                      fontSize: screenWidth / 30, fontWeight: FontWeight.w500),
                 ),
                 Icon(
                   Icons.check_circle_outlined,
@@ -70,6 +70,7 @@ class NewsDescriptionScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: screenHeight/25),
           Padding(
             padding: EdgeInsets.only(
                 left: screenWidth / 31, right: screenWidth / 31),

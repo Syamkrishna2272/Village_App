@@ -69,7 +69,7 @@ class TaxiServiceScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
               child: SizedBox(
-                height: screenHeight / 9.2,
+                height: screenHeight / 9,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 4,
@@ -122,7 +122,7 @@ class TaxiServiceScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
               child: SizedBox(
-                height: screenHeight / 9.2,
+                height: screenHeight / 9, //updated
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,

@@ -16,7 +16,7 @@ class SecondContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(screenWidth / 25),
       child: Container(
-        height: screenHeight / 4.2,
+        height: screenHeight / 3.6, //updated
         width: screenWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(screenWidth / 45),

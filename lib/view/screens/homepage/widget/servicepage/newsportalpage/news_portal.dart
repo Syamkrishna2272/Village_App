@@ -42,17 +42,25 @@ class NewsPortalScreen extends StatelessWidget {
               )
             ],
           ),
-          bottom: const TabBar(
-            labelPadding: EdgeInsets.symmetric(),
+          bottom: TabBar(
+            labelPadding: const EdgeInsets.symmetric(),
             tabs: [
-              Tab(
-                text: "Hot News",
+              Padding(
+                padding: EdgeInsets.only(
+                    right: screenWidth / 25, left: screenWidth / 25),
+                child: const Tab(
+                  text: "Hot News",
+                ),
               ),
-              Tab(
+              const Tab(
                 text: "Katharammal News",
               ),
-              Tab(
-                text: "Village Shorts",
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenWidth / 45, right: screenWidth / 20),
+                child: const Tab(
+                  text: "Village Shorts",
+                ),
               )
             ],
           ),

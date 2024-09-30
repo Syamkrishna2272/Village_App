@@ -24,7 +24,7 @@ class JobWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
       child: SizedBox(
-        height: screenHeight / 6.5,
+        height: screenHeight / 6.2,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: jobData.length,
