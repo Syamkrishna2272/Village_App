@@ -16,6 +16,7 @@ class _AllImagesScreenState extends State<AllImagesScreen> {
   ];
 
   String selectedImage = 'lib/asset/img/Rectangle 128.png';
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,17 @@ class _AllImagesScreenState extends State<AllImagesScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(selectedImage),
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
+
+            // Thumbnails ListView
             Padding(
-              padding: EdgeInsets.only(top: screenWidth / 12),
+              padding: EdgeInsets.only(top: screenWidth / 3),
               child: Center(
                 child: SizedBox(
-                  width: screenWidth / 1.5, // Reduce the width to center it
+                  width: screenWidth / 1.5,
                   height: screenHeight / 12,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -62,13 +65,16 @@ class _AllImagesScreenState extends State<AllImagesScreen> {
                           onTap: () {
                             setState(() {
                               selectedImage = images[index];
+                              _selectedIndex = index; // Update selected index
                             });
                           },
                           child: Container(
                             decoration: BoxDecoration(
                               border: Border.all(
-                                color: Colors.white, // Border color
-                                width: 1,
+                                color: _selectedIndex == index
+                                    ? Colors.white
+                                    : Colors.black,
+                                width: 2,
                               ),
                               borderRadius:
                                   BorderRadius.circular(screenWidth / 45),
