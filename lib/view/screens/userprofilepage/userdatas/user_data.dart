@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/userprofilepage/widget/user_data_widget.dart';
+import 'package:village_app/view/screens/userprofilepage/userdatas/widget/user_data_widget.dart';
 import 'package:village_app/view/widgets/button_widget.dart';
 
 class UserDataScreen extends StatefulWidget {

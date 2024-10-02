@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/userprofilepage/user_data.dart';
+import 'package:village_app/view/screens/userprofilepage/userdatas/user_data.dart';
 
 class SecondContainer extends StatelessWidget {
   const SecondContainer({
