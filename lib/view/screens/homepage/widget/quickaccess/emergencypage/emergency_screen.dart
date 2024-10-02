@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/emergencypage/widget/amulance_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/quickaccess/emergencypage/widget/emergency_card_widget.dart';
+import 'package:village_app/view/widgets/button_widget.dart';
 
 class EmergencyScreen extends StatefulWidget {
   const EmergencyScreen({super.key});
@@ -28,7 +30,8 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
           children: [
             if (_isAlertVisible)
               Padding(
-                padding: EdgeInsets.all(screenWidth / 30),
+                padding: EdgeInsets.only(
+                    left: screenWidth / 20, right: screenWidth / 20),
                 child: Container(
                   height: screenHeight / 5,
                   width: screenWidth,
@@ -81,60 +84,8 @@ to Sed ut perspiciatis unde omnis.""",
                 ),
               ),
             SizedBox(height: screenHeight / 25),
-            Padding(
-              padding: EdgeInsets.only(left: screenWidth / 18),
-              child: Row(
-                children: [
-                  Container(
-                    width: screenWidth / 2.3,
-                    height: screenHeight / 13,
-                    decoration: BoxDecoration(
-                        color: const Color(0XFFF4F4F4),
-                        borderRadius: BorderRadius.circular(screenWidth / 45)),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: screenWidth / 20),
-                          child: Image.asset('lib/asset/img/Group (12).png'),
-                        ),
-                        SizedBox(width: screenWidth / 50),
-                        Text(
-                          'Ambulance',
-                          style: TextStyle(
-                              fontSize: screenWidth / 30,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: screenWidth / 50,
-                  ),
-                  Container(
-                    width: screenWidth / 2.3,
-                    height: screenHeight / 13,
-                    decoration: BoxDecoration(
-                        color: const Color(0XFFF4F4F4),
-                        borderRadius: BorderRadius.circular(screenWidth / 45)),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: screenWidth / 15),
-                          child: Image.asset('lib/asset/img/XMLID_1_.png'),
-                        ),
-                        SizedBox(width: screenWidth / 15),
-                        Text(
-                          'Fire Force',
-                          style: TextStyle(
-                              fontSize: screenWidth / 30,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            AmbulanceFireForceWidget(
+                screenWidth: screenWidth, screenHeight: screenHeight),
             SizedBox(
               height: screenHeight / 35,
             ),
@@ -146,10 +97,35 @@ to access important notifications.""",
             ),
             SizedBox(height: screenHeight / 35),
             EmergencyCardWidget(
-                screenWidth: screenWidth, screenHeight: screenHeight)
+                screenWidth: screenWidth, screenHeight: screenHeight),
+            SizedBox(
+              height: screenHeight / 15,
+            ),
+            Text(
+              "Any emergency news ?",
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: screenWidth / 20),
+            ),
+            SizedBox(
+              width: screenWidth / 3,
+              height: screenHeight / 16,
+              child: ButtonWidget(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
+                  buttonColor: const Color(0XFF427ECC),
+                  text: 'Notify All',
+                  fontSize: screenWidth / 28,
+                  fontWeight: FontWeight.w400,
+                  textColor: Colors.white,
+                  onPressed: () {}),
+            ),
+            SizedBox(
+              height: screenHeight / 8,
+            )
           ],
         ),
       )),
     );
   }
+  
 }
