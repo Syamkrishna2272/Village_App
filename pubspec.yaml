@@ -134,6 +134,10 @@ flutter:
     - lib/asset/img/Rectangle 169 (1).png
     - lib/asset/img/Group (12).png
     - lib/asset/img/XMLID_1_.png
+    - lib/asset/img/23-direction.png
+    - lib/asset/img/Group (13).png
+    - lib/asset/img/Group (14).png
+    - lib/asset/img/Group 655.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
