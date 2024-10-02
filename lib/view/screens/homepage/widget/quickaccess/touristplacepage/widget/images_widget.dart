@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/touristplacepage/widget/allimages_show.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplacepage/widget/allimages_show.dart';
 
 class ImagesWidget extends StatelessWidget {
   const ImagesWidget({

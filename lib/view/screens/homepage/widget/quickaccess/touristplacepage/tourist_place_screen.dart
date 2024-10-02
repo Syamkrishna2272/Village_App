@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
-import 'package:village_app/view/screens/touristplacepage/tourist_spot.dart';
-import 'package:village_app/view/screens/touristplacepage/widget/touristplace_card.dart';
+import 'package:village_app/view/widgets/text_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplacepage/tourist_spot.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplacepage/widget/touristplace_card.dart';
 
 class TouristPlaceScreen extends StatelessWidget {
   const TouristPlaceScreen({super.key});

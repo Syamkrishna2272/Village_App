@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/homepage/widget/carousel_widget.dart';
+import 'package:village_app/view/widgets/carousel_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/joborprofessional/job_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/officecontact/office_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/quickaccess/quick_widget.dart';
-import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/view/widgets/text_widget.dart';
 import 'package:village_app/view/screens/homepage/widget/servicepage/service_widget.dart';
 import 'package:village_app/view/screens/userprofilepage/user_profile_details.dart';
 

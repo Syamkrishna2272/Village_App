@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/view/widgets/text_widget.dart';
 
 class JobOrProfessionScreen extends StatefulWidget {
   const JobOrProfessionScreen({super.key});

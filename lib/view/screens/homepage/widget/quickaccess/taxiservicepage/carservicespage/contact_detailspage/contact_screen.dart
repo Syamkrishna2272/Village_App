@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:village_app/view/screens/carservicespage/contact_detailspage/tabbar_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/taxiservicepage/carservicespage/contact_detailspage/tabbar_widget.dart';
 
 class CarContactScreen extends StatelessWidget {
   const CarContactScreen({super.key});

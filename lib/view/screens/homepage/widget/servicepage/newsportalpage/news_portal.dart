@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/homepage/widget/servicepage/news_description.dart';
-import 'package:village_app/view/screens/homepage/widget/servicepage/widget/newsportal_card_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/servicepage/newsportalpage/widget/news_description.dart';
+import 'package:village_app/view/screens/homepage/widget/servicepage/newsportalpage/widget/newsportal_card_widget.dart';
 
 class NewsPortalScreen extends StatelessWidget {
   const NewsPortalScreen({super.key});

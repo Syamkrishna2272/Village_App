@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/touristplacepage/widget/images_widget.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplacepage/widget/images_widget.dart';
 
 class SpecificTouristSpot extends StatelessWidget {
   const SpecificTouristSpot({super.key});

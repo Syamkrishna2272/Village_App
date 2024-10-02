@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/homepage/widget/text_widget.dart';
+import 'package:village_app/view/widgets/text_widget.dart';
 
 class TabbarWidget extends StatelessWidget {
   const TabbarWidget({

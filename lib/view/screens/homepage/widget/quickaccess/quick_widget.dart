@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/taxiservicepage/taxiservice_screen.dart';
-import 'package:village_app/view/screens/touristplacepage/tourist_place_screen.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/emergencypage/emergency_screen.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/taxiservicepage/taxiservice_screen.dart';
+import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplacepage/tourist_place_screen.dart';
 
 class QuickAccessWidget extends StatelessWidget {
   final List<Map<String, dynamic>> quickaccessData = [
@@ -92,6 +93,11 @@ class QuickAccessWidget extends StatelessWidget {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
           return const TouristPlaceScreen();
         }));
+        break;
+        case 'Emergency':
+        Navigator.of(context).push(MaterialPageRoute(builder: (context){
+          return EmergencyScreen();
+        })); 
     }
   }
 }
