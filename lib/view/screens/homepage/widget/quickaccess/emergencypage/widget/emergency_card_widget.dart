@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:village_app/view/widgets/button_widget.dart';
 import 'package:village_app/view/widgets/text_widget.dart';
 
 class EmergencyCardWidget extends StatelessWidget {
@@ -107,110 +108,149 @@ class EmergencyCardWidget extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
-        return Container(
-          padding: EdgeInsets.all(screenWidth / 20),
-          height: MediaQuery.of(context).size.height * 0.6,
-          child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        return SingleChildScrollView(
+          // Wrap the container with SingleChildScrollView
+          child: Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context)
+                  .viewInsets
+                  .bottom, // Adjust for keyboard
+            ),
+            child: Container(
+              padding: EdgeInsets.all(screenWidth / 20),
+              height: MediaQuery.of(context).size.height * 0.7, // Set height
+              child: Column(
                 children: [
-                  // Center the title
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "Emergency News",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: screenWidth / 18,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            "Emergency News",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: screenWidth / 18,
+                            ),
+                          ),
                         ),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          icon: const Icon(Icons.close),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  HomeTextWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: "Category",
+                      fontWeight: FontWeight.w600,
+                      fontSize: screenWidth / 25,
+                      paddingLeft: screenWidth / 65,
+                      paddingTop: screenHeight / 35),
+                  TextFormField(
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
+                    ],
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0XFFD2D2D2)),
+                        borderRadius: BorderRadius.circular(screenWidth / 40),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0XFF427ECC)),
+                        borderRadius: BorderRadius.circular(screenWidth / 40),
+                      ),
+                      // hintText: "Last Name (mandatory)",
+                      hintStyle: TextStyle(
+                        fontSize: screenWidth / 30,
+                        color: const Color.fromARGB(255, 135, 146, 142),
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
+                  SizedBox(
+                    height: screenHeight / 75,
+                  ),
+                  HomeTextWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: "Description",
+                      fontWeight: FontWeight.w600,
+                      fontSize: screenWidth / 25,
+                      paddingLeft: screenWidth / 65,
+                      paddingTop: screenHeight / 35),
+                  TextFormField(
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
+                    ],
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0XFFD2D2D2)),
+                        borderRadius: BorderRadius.circular(screenWidth / 40),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0XFF427ECC)),
+                        borderRadius: BorderRadius.circular(screenWidth / 40),
+                      ),
+                      hintText: "description (mandatory)",
+                      hintStyle: TextStyle(
+                        fontSize: screenWidth / 30,
+                        color: const Color.fromARGB(255, 135, 146, 142),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight / 15,
+                  ),
+                  Container(
+                    height: screenHeight / 15,
+                    width: screenWidth / 2.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(screenWidth / 45),
+                      color: const Color(0XFFF4F4F4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.attach_file,
+                          color: const Color(0XFF427ECC),
+                          size: screenWidth / 22,
+                        ),
+                        Text(
+                          'Attach an image',
+                          style: TextStyle(
+                              fontSize: screenWidth / 30,
+                              fontWeight: FontWeight.w400,
+                              color: const Color(0XFF427ECC)),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: screenHeight / 10),
+                  SizedBox(
+                    width: screenWidth,
+                    child: ButtonWidget(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
+                      buttonColor: const Color(0XFF427ECC),
+                      text: 'Submit',
+                      fontSize: screenWidth / 28,
+                      onPressed: () {},
+                      textColor: Colors.white,
                     ),
                   ),
                 ],
               ),
-              HomeTextWidget(
-                  screenWidth: screenWidth,
-                  screenHeight: screenHeight,
-                  text: "Category",
-                  fontWeight: FontWeight.w600,
-                  fontSize: screenWidth / 25,
-                  paddingLeft: screenWidth / 65,
-                  paddingTop: screenHeight / 35),
-              TextFormField(
-                textCapitalization: TextCapitalization.words,
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
-                ],
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0XFFD2D2D2)),
-                    borderRadius: BorderRadius.circular(screenWidth / 40),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0XFF427ECC)),
-                    borderRadius: BorderRadius.circular(screenWidth / 40),
-                  ),
-                  hintText: "Last Name (mandatory)",
-                  hintStyle: TextStyle(
-                    fontSize: screenWidth / 30,
-                    color: const Color.fromARGB(255, 135, 146, 142),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: screenHeight / 75,
-              ),
-              HomeTextWidget(
-                  screenWidth: screenWidth,
-                  screenHeight: screenHeight,
-                  text: "Description",
-                  fontWeight: FontWeight.w600,
-                  fontSize: screenWidth / 25,
-                  paddingLeft: screenWidth / 65,
-                  paddingTop: screenHeight / 35),
-              TextFormField(
-                textCapitalization: TextCapitalization.words,
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
-                ],
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0XFFD2D2D2)),
-                    borderRadius: BorderRadius.circular(screenWidth / 40),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0XFF427ECC)),
-                    borderRadius: BorderRadius.circular(screenWidth / 40),
-                  ),
-                  hintText: "description (mandatory)",
-                  hintStyle: TextStyle(
-                    fontSize: screenWidth / 30,
-                    color: const Color.fromARGB(255, 135, 146, 142),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: screenHeight / 15, 
-              ), 
-              Container(
-                height: screenHeight / 15,
-                width: screenWidth / 2.5,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(screenWidth / 45),
-                    color: Colors.amber),
-              )
-            ],
+            ),
           ),
         );
       },
