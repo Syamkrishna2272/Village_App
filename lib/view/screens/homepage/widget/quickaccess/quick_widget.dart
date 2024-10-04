@@ -66,7 +66,7 @@ class QuickAccessWidget extends StatelessWidget {
                     ),
                     Text(
                       item['text'],
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,  
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: screenWidth / 32,

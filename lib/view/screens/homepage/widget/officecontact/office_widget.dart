@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:village_app/view/screens/homepage/widget/officecontact/ksebpage/ksebscreen.dart';
 
 class OfficeWidget extends StatelessWidget {
   final List<Map<String, dynamic>> officeData = [
@@ -29,35 +30,38 @@ class OfficeWidget extends StatelessWidget {
             final item = officeData[index];
             return Padding(
               padding: EdgeInsets.only(right: screenWidth / 30),
-              child: Container(
-                width: screenWidth / 3.5,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: const Color(0XFFD9D9D9),
-                    width: 1,
+              child: GestureDetector(
+                onTap: () => ontappItem(context, item['text']),
+                child: Container(
+                  width: screenWidth / 3.5,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(
+                      color: const Color(0XFFD9D9D9),
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(screenWidth / 45),
                   ),
-                  borderRadius: BorderRadius.circular(screenWidth / 45),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: screenWidth / 7,
-                      height: screenHeight / 10,
-                      child: Image.asset(item['image']),
-                    ),
-                    SizedBox(height: screenHeight / 60),
-                    Text(
-                      item['text'],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: screenWidth / 32,
-                        color: Colors.black,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: screenWidth / 7,
+                        height: screenHeight / 10,
+                        child: Image.asset(item['image']),
                       ),
-                    ),
-                  ],
+                      SizedBox(height: screenHeight / 60),
+                      Text(
+                        item['text'],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: screenWidth / 32,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             );
@@ -65,5 +69,25 @@ class OfficeWidget extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void ontappItem(BuildContext context, String text) {
+    switch (text) {
+      case 'KSEB':
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return const KsebScreen();
+        }));
+        break;
+      //   case 'Nearby Tourist Places':
+      //     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      //       return const TouristPlaceScreen();
+      //     }));
+      //     break;
+      //     case 'Emergency':
+      //     Navigator.of(context).push(MaterialPageRoute(builder: (context){
+      //       return EmergencyScreen();
+      //     }));
+      // }
+    }
   }
 }
