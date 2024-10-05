@@ -5,22 +5,22 @@ import 'package:village_app/view/screens/homepage/widget/quickaccess/touristplac
 
 class QuickAccessWidget extends StatelessWidget {
   final List<Map<String, dynamic>> quickaccessData = [
-    {'image': 'lib/asset/img/Group 605.png', 'text': 'Jobs or Professions'},
-    {'image': 'lib/asset/img/Group 608.png', 'text': 'Taxi Services'},
-    {'image': 'lib/asset/img/Vector (1).png', 'text': 'Bus Services'},
-    {'image': 'lib/asset/img/Group 614.png', 'text': 'Shops and Business'},
-    {'image': 'lib/asset/img/Frame.png', 'text': 'Nearby Tourist Places'},
-    {'image': 'lib/asset/img/Group 606.png', 'text': 'Office Contacts'},
-    {'image': 'lib/asset/img/Group 612.png', 'text': 'Emergency'},
-    {'image': 'lib/asset/img/Group 613.png', 'text': 'Village Shorts'},
-    {'image': 'lib/asset/img/Group 610.png', 'text': 'Event Calender'},
+    {'image': 'lib/asset/img/Group 605 (1).png', 'text': 'Jobs or Professions'},
+    {'image': 'lib/asset/img/Group 608 (1).png', 'text': 'Taxi Services'},
+    {'image': 'lib/asset/img/Vector (3).png', 'text': 'Bus Services'},
+    {'image': 'lib/asset/img/Group 614 (1).png', 'text': 'Shops and Business'},
+    {'image': 'lib/asset/img/Frame (2).png', 'text': 'Nearby Tourist Places'},
+    {'image': 'lib/asset/img/Group 606 (1).png', 'text': 'Office Contacts'},
+    {'image': 'lib/asset/img/Group 612 (1).png', 'text': 'Emergency'}, 
+    {'image': 'lib/asset/img/Group 613 (1).png', 'text': 'Village Shorts'},
+    {'image': 'lib/asset/img/Group 610 (1).png', 'text': 'Event Calender'},
   ];
 
   QuickAccessWidget({
     super.key,
     required this.screenWidth,
     required this.screenHeight,
-  });
+  }); 
 
   final double screenWidth;
   final double screenHeight;
@@ -60,9 +60,12 @@ class QuickAccessWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: screenWidth / 5,
-                      height: screenHeight / 18,
+                      width: screenWidth ,
+                      height: screenHeight / 23,
                       child: Image.asset(quickaccessData[index]['image']),
+                    ),
+                    SizedBox(
+                      height: screenHeight / 65,
                     ),
                     Text(
                       item['text'],
