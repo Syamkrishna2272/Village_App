@@ -19,7 +19,7 @@ class KsebCardWidget extends StatelessWidget {
         width: screenWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(screenWidth / 45),
-          color: const Color(0XFFD9D9D9),
+          color: const Color.fromARGB(255, 233, 228, 228),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ class KsebCardWidget extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(left: screenWidth / 5),
+              padding: EdgeInsets.only(left: screenWidth / 5.3),
               child: Row(
                 children: [
                   // First small container
@@ -92,7 +92,7 @@ class KsebCardWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: screenWidth / 45,
+                    width: screenWidth / 55,
                   ),
                   Container(
                     height: screenHeight / 15,
