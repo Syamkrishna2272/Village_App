@@ -4,10 +4,10 @@ import 'package:village_app/view/widgets/text_widget.dart';
 
 class TaxiServiceScreen extends StatelessWidget {
   final List<Map<String, dynamic>> officeData = [
-    {'image': 'lib/asset/img/image 1.png', 'text': 'Car Service'},
-    {'image': 'lib/asset/img/image 2.png', 'text': 'KSEB'},
-    {'image': 'lib/asset/img/image 3.png', 'text': 'Police'},
-    {'image': 'lib/asset/img/image 4.png', 'text': 'MVD'},
+    {'image': 'lib/asset/img/image 1 (1).png', 'text': 'Car Service'},
+    {'image': 'lib/asset/img/image 2 (1).png', 'text': 'KSEB'},
+    {'image': 'lib/asset/img/image 3 (1).png', 'text': 'Police'},
+    {'image': 'lib/asset/img/image 4 (1).png', 'text': 'MVD'},
   ];
 
   TaxiServiceScreen({super.key});
@@ -145,7 +145,7 @@ class TaxiServiceScreen extends StatelessWidget {
                           children: [
                             SizedBox(
                               width: screenWidth / 5,
-                              height: screenHeight / 15,
+                              height: screenHeight / 18,
                               child: Image.asset(item['image']),
                             ),
                             SizedBox(height: screenHeight / 60),
@@ -159,7 +159,7 @@ class TaxiServiceScreen extends StatelessWidget {
                               ),
                             ),
                           ],
-                        ), 
+                        ),
                       ),
                     );
                   },

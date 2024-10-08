@@ -31,8 +31,7 @@ class ServiceWidget extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
                       child: SizedBox(
-                          height: screenHeight / 25,
-                          width: screenWidth / 10,
+                          width: screenWidth / 11,
                           child:
                               Image.asset('lib/asset/img/Group 618 (1).png')),
                     ),
@@ -60,8 +59,7 @@ class ServiceWidget extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
                       child: SizedBox(
-                          height: screenHeight / 25,
-                          width: screenWidth / 10,
+                          width: screenWidth / 11,
                           child: Image.asset('lib/asset/img/Layer_4 (1).png')),
                     ),
                     SizedBox(width: screenWidth / 50),
@@ -102,8 +100,7 @@ class ServiceWidget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth / 20),
                         child: SizedBox(
-                            height: screenHeight / 25,
-                            width: screenWidth / 10,
+                            width: screenWidth / 13,
                             child:
                                 Image.asset('lib/asset/img/Group 619 (1).png')),
                       ),
@@ -132,7 +129,6 @@ class ServiceWidget extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
                       child: SizedBox(
-                          height: screenHeight / 18,
                           width: screenWidth / 10,
                           child: Image.asset('lib/asset/img/Layer_41 (1).png')),
                     ),

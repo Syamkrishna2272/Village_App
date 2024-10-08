@@ -3,10 +3,10 @@ import 'package:village_app/view/screens/homepage/widget/officecontact/ksebpage/
 
 class OfficeWidget extends StatelessWidget {
   final List<Map<String, dynamic>> officeData = [
-    {'image': 'lib/asset/img/image 1.png', 'text': 'BANK'},
-    {'image': 'lib/asset/img/image 2.png', 'text': 'KSEB'},
-    {'image': 'lib/asset/img/image 3.png', 'text': 'Police'},
-    {'image': 'lib/asset/img/image 4.png', 'text': 'MVD'},
+    {'image': 'lib/asset/img/image 1 (1).png', 'text': 'BANK'},
+    {'image': 'lib/asset/img/image 2 (1).png', 'text': 'KSEB'},
+    {'image': 'lib/asset/img/image 3 (1).png', 'text': 'Police'},
+    {'image': 'lib/asset/img/image 4 (1).png', 'text': 'MVD'},
   ];
   OfficeWidget({
     super.key,
@@ -19,7 +19,7 @@ class OfficeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Padding( 
       padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
       child: SizedBox(
         height: screenHeight / 6.5,

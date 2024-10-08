@@ -34,7 +34,9 @@ class KsebCardWidget extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: screenWidth / 13,
-                    child: Image.asset('lib/asset/img/image 2.png'),
+                    child: SizedBox(
+                      width: screenWidth/10,
+                      child: Image.asset('lib/asset/img/image 2 (1).png')),
                   ),
                 ),
                 SizedBox(
