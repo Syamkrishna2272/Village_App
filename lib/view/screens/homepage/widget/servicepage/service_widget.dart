@@ -30,7 +30,11 @@ class ServiceWidget extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
-                      child: Image.asset('lib/asset/img/Group 618.png'),
+                      child: SizedBox(
+                          height: screenHeight / 25,
+                          width: screenWidth / 10,
+                          child:
+                              Image.asset('lib/asset/img/Group 618 (1).png')),
                     ),
                     SizedBox(width: screenWidth / 50),
                     Text(
@@ -55,7 +59,10 @@ class ServiceWidget extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
-                      child: Image.asset('lib/asset/img/Layer_4.png'),
+                      child: SizedBox(
+                          height: screenHeight / 25,
+                          width: screenWidth / 10,
+                          child: Image.asset('lib/asset/img/Layer_4 (1).png')),
                     ),
                     SizedBox(width: screenWidth / 50),
                     Text(
@@ -79,21 +86,26 @@ class ServiceWidget extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
                     return const NewsPortalScreen();
                   }));
                 },
-                child: Container( 
+                child: Container(
                   width: screenWidth / 2.3,
                   height: screenHeight / 13,
                   decoration: BoxDecoration(
                       color: const Color(0XFFF4F4F4),
                       borderRadius: BorderRadius.circular(screenWidth / 45)),
                   child: Row(
-                    children: [ 
+                    children: [
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth / 20),
-                        child: Image.asset('lib/asset/img/Group 619.png'),
+                        child: SizedBox(
+                            height: screenHeight / 25,
+                            width: screenWidth / 10,
+                            child:
+                                Image.asset('lib/asset/img/Group 619 (1).png')),
                       ),
                       SizedBox(width: screenWidth / 50),
                       Text(
@@ -119,7 +131,10 @@ class ServiceWidget extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: screenWidth / 20),
-                      child: Image.asset('lib/asset/img/Layer_41.png'),
+                      child: SizedBox(
+                          height: screenHeight / 18,
+                          width: screenWidth / 10,
+                          child: Image.asset('lib/asset/img/Layer_41 (1).png')),
                     ),
                     SizedBox(width: screenWidth / 50),
                     Text(
