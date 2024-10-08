@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
-                  return const UserProfileScreen();
+                  return const UserProfileScreen(); 
                 }));
               },
               child: const CircleAvatar(
@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('lib/asset/img/Group 603.png'),
+                      image: AssetImage('lib/asset/img/Group 603 (1).png'),
                       fit: BoxFit.cover),
                 ),
                 width: screenWidth,

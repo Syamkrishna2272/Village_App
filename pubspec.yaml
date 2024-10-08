@@ -63,15 +63,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/asset/img/Group 603.png
     - lib/asset/img/Ellipse 52.png
     - lib/asset/img/coolest-places-in-kerala-visit-during-summer.webp
     - lib/asset/img/Jatayu-National-Park-Kerala-1024x512_Snapseed-5aafa43eff1b780036c19082.jpg
     - lib/asset/img/Idukki.jpg
-    - lib/asset/img/Rectangle 159.png
-    - lib/asset/img/Rectangle 160.png
-    - lib/asset/img/Rectangle 162.png
-    - lib/asset/img/Rectangle 163.png
     - lib/asset/img/Ellipse 18.png
     - lib/asset/img/Ellipse 24.png
     - lib/asset/img/Ellipse 25.png
@@ -138,6 +133,11 @@ flutter:
     - lib/asset/img/image 2 (1).png
     - lib/asset/img/image 3 (1).png
     - lib/asset/img/image 4 (1).png
+    - lib/asset/img/Rectangle 159 (1).png
+    - lib/asset/img/Rectangle 160 (1).png
+    - lib/asset/img/Rectangle 162 (1).png
+    - lib/asset/img/Rectangle 163 (1).png
+    - lib/asset/img/Group 603 (1).png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

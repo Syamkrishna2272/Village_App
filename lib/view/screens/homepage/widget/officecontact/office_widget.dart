@@ -19,10 +19,10 @@ class OfficeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding( 
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
       child: SizedBox(
-        height: screenHeight / 6.5,
+        height: screenHeight / 6.9,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: officeData.length,

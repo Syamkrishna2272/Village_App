@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class JobWidget extends StatelessWidget {
   
     final List<Map<String, dynamic>> jobData = [
-      {'image': 'lib/asset/img/Rectangle 159.png', 'text': 'Emergency'},
-      {'image': 'lib/asset/img/Rectangle 160.png', 'text': 'Emergency'},
-      {'image': 'lib/asset/img/Rectangle 162.png', 'text': 'Emergency'},
-      {'image': 'lib/asset/img/Rectangle 163.png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 159 (1).png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 160 (1).png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 162 (1).png', 'text': 'Emergency'},
+      {'image': 'lib/asset/img/Rectangle 163 (1).png', 'text': 'Emergency'},
     ];
   JobWidget({
     super.key,
