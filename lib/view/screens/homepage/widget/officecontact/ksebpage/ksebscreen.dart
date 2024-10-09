@@ -57,7 +57,7 @@ class KsebScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: screenWidth / 25,
                 paddingLeft: screenWidth / 20,
-                paddingTop: screenHeight / 30,
+                paddingTop: screenHeight / 65,
               ),
               SizedBox(
                 height: screenHeight / 45,
