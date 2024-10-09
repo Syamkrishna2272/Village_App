@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:village_app/view/screens/detailspage/userdetails.dart';
+import 'package:village_app/view/screens/basicdetailspage/userdetails.dart';
 import 'package:village_app/view/screens/userprofilepage/emailscreen/email_page.dart';
 import 'package:village_app/view/screens/userprofilepage/userdatas/widget/job_profession.dart';
 import 'package:village_app/view/screens/verificationpage/mobile_verification.dart';
