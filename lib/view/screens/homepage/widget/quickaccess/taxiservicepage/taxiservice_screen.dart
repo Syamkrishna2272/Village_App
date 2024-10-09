@@ -129,57 +129,62 @@ class TaxiServiceScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
               child: SizedBox(
-                height: screenHeight / 9, // Updated
+                height: screenHeight / 7, // Adjust height if needed
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     final item = officeData[index];
                     return Padding(
                       padding: EdgeInsets.only(right: screenWidth / 30),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          // Container for the image
-                          Container(
-                            width: screenWidth / 5,
-                            height: screenHeight / 10,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              border: Border.all(
-                                color: const Color(0XFFD9D9D9),
-                                width: 1,
+                      child: GestureDetector(
+                        onTap: () => ontappItem(context, item['text']),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            // Container for the image
+                            Container(
+                              width: screenWidth / 5,
+                              height:
+                                  screenHeight / 10, // Adjust container height
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                border: Border.all(
+                                  color: const Color(0XFFD9D9D9),
+                                  width: 1,
+                                ),
+                                borderRadius:
+                                    BorderRadius.circular(screenWidth / 45),
                               ),
-                              borderRadius:
-                                  BorderRadius.circular(screenWidth / 45),
-                            ),
-                            child: Center(
-                              child: SizedBox(
-                                width: screenWidth / 5,
-                                height: screenHeight / 18,
-                                child: Image.asset(item['image']),
+                              child: Center(
+                                child: SizedBox(
+                                  width: screenWidth / 5,
+                                  height: screenHeight / 18,
+                                  child: Image.asset(item['image']),
+                                ),
                               ),
                             ),
-                          ),
-                          // SizedBox for spacing between container and text
-                          SizedBox(height: screenHeight / 60),
-                          // Text displayed below the container
-                          Text(
-                            item['text'],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: screenWidth / 32,
-                              color: Colors.black,
+                            // SizedBox for spacing between container and text
+                            SizedBox(height: screenHeight / 60),
+                            // Text displayed below the container
+                            Text(
+                              item['text'],
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: screenWidth / 32,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
