@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:village_app/view/screens/basicdetailspage/widget/button.dart';
-import 'package:village_app/view/screens/basicdetailspage/widget/texform3.dart';
+import 'package:village_app/view/screens/basicdetailspage/widget/emailform3.dart';
 import 'package:village_app/view/screens/basicdetailspage/widget/textform1.dart';
 import 'package:village_app/view/screens/basicdetailspage/widget/textform2.dart';
 
