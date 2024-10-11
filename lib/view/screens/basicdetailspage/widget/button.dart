@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:village_app/view/screens/basicdetailspage/userdetails.dart';
 import 'package:village_app/view/screens/homepage/view/home_screen.dart';
 import 'package:village_app/view/widgets/button_widget.dart';
 
 class Button extends StatelessWidget {
-  final GlobalKey<FormState> formKey; // Add formKey as a parameter
+  final GlobalKey<FormState> formKey;
+  final UserDetailsScreen widget;
+  final double screenHeight;
+  final double screenWidth;
+  final TextEditingController firstnameController;
+  final TextEditingController lastnameController;
+  final TextEditingController emailController;
 
   const Button({
     super.key,
     required this.widget,
     required this.screenHeight,
     required this.screenWidth,
-    required this.formKey, // Accept formKey as a required parameter
+    required this.formKey,
+    required this.firstnameController,
+    required this.lastnameController,
+    required this.emailController,
   });
-
-  final UserDetailsScreen widget;
-  final double screenHeight;
-  final double screenWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +51,6 @@ class Button extends StatelessWidget {
                     )),
                   ),
                 ),
-                // Update Button
                 Container(
                   height: screenHeight / 17,
                   width: screenWidth / 2.4,
@@ -69,10 +74,23 @@ class Button extends StatelessWidget {
               text: "Continue",
               fontSize: screenWidth / 28,
               textColor: Colors.white,
-              onPressed: () {
-                // Validate the form fields when the button is pressed
+              onPressed: () async {
                 if (formKey.currentState?.validate() ?? false) {
-                  // If form is valid, navigate to the next screen
+                  final box = Hive.box('userDetails');
+
+                  // Fetch data from controllers
+                  String firstname = firstnameController.text;
+                  String lastname = lastnameController.text;
+                  String email = emailController.text;
+
+                  print("success: $firstname, $lastname, $email");
+
+                  // Save data to Hive box
+                  await box.add(firstname);
+                  await box.add(lastname);
+                  if (email.isNotEmpty) {
+                    await box.put('email', email); // Only store if not empty
+                  }
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) {
                       return const HomeScreen();

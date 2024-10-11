@@ -6,6 +6,7 @@ import 'package:village_app/view/screens/basicdetailspage/widget/textform2.dart'
 
 class UserDetailsScreen extends StatefulWidget {
   final bool fromUserDataWidget;
+
   const UserDetailsScreen({super.key, this.fromUserDataWidget = false});
 
   @override
@@ -13,7 +14,19 @@ class UserDetailsScreen extends StatefulWidget {
 }
 
 class _UserDetailsScreenState extends State<UserDetailsScreen> {
-  final formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -36,11 +49,10 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
           padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
           child: SingleChildScrollView(
             child: Form(
-              key: formkey,
+              key: formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // const SizedBox(height: 20),
                   const Center(
                     child: Text(
                       "This helps us understand you better. Please fill",
@@ -60,8 +72,12 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                   ),
                   SizedBox(height: screenHeight / 80),
 
-                  //First name textform field
-                  TextFormField1(screenWidth: screenWidth),
+                  // First name text form field
+                  TextFormField1(
+                    controller: firstNameController,
+                    screenWidth: screenWidth,
+                  ),
+
                   SizedBox(height: screenHeight / 35),
                   const Text(
                     "Enter Last Name",
@@ -69,23 +85,36 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                   ),
                   SizedBox(height: screenHeight / 80),
 
-                  //Last name textform field
-                  TextFormField2(screenWidth: screenWidth),
+                  // Last name text form field
+                  TextFormField2(
+                    controller: lastNameController,
+                    screenWidth: screenWidth,
+                  ),
+
                   SizedBox(height: screenHeight / 35),
                   const Text(
                     "Email",
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: screenHeight / 80),
-                  EmailFormField(screenWidth: screenWidth),
-                  SizedBox(
-                    height: screenHeight / 3.4,
+
+                  // Email text form field
+                  EmailFormField(
+                    controller: emailController,
+                    screenWidth: screenWidth,
                   ),
+
+                  SizedBox(height: screenHeight / 3.4),
+
+                  // Button widget
                   Button(
                     widget: widget,
                     screenHeight: screenHeight,
                     screenWidth: screenWidth,
-                    formKey: formkey,
+                    formKey: formKey,
+                    firstnameController: firstNameController,
+                    lastnameController: lastNameController,
+                    emailController: emailController,
                   ),
                 ],
               ),

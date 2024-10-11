@@ -5,9 +5,11 @@ class TextFormField1 extends StatelessWidget {
   const TextFormField1({
     super.key,
     required this.screenWidth,
+    required this.controller
   });
 
   final double screenWidth;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {

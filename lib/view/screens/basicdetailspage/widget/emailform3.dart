@@ -5,9 +5,11 @@ class EmailFormField extends StatelessWidget {
   const EmailFormField({
     super.key,
     required this.screenWidth,
+    required this.controller
   });
 
   final double screenWidth;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
