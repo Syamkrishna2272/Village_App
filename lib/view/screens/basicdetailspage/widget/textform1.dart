@@ -12,6 +12,13 @@ class TextFormField1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'First name is required';
+        }
+        return null;
+      },
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       textCapitalization: TextCapitalization.words,
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]')),
@@ -25,6 +32,17 @@ class TextFormField1 extends StatelessWidget {
           borderSide: const BorderSide(color: Color(0XFF427ECC)),
           borderRadius: BorderRadius.circular(screenWidth / 40),
         ),
+        errorBorder: OutlineInputBorder(
+          // Add this for error state border
+          borderSide: const BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.circular(screenWidth / 40),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          // Add this for focused error state border
+          borderSide: const BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.circular(screenWidth / 40),
+        ),
+        border: InputBorder.none,
         hintText: "First Name",
         hintStyle: TextStyle(
           fontSize: screenWidth / 30,

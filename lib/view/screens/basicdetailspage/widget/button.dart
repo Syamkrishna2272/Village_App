@@ -4,11 +4,14 @@ import 'package:village_app/view/screens/homepage/view/home_screen.dart';
 import 'package:village_app/view/widgets/button_widget.dart';
 
 class Button extends StatelessWidget {
+  final GlobalKey<FormState> formKey; // Add formKey as a parameter
+
   const Button({
     super.key,
     required this.widget,
     required this.screenHeight,
     required this.screenWidth,
+    required this.formKey, // Accept formKey as a required parameter
   });
 
   final UserDetailsScreen widget;
@@ -67,11 +70,33 @@ class Button extends StatelessWidget {
               fontSize: screenWidth / 28,
               textColor: Colors.white,
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const HomeScreen();
-                  }),
-                );
+                // Validate the form fields when the button is pressed
+                if (formKey.currentState?.validate() ?? false) {
+                  // If form is valid, navigate to the next screen
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) {
+                      return const HomeScreen();
+                    }),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Padding(
+                        padding: EdgeInsets.all(screenWidth / 35),
+                        child: Text(
+                          'Please complete all required fields',
+                          style: TextStyle(
+                              fontSize: screenWidth / 25,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      backgroundColor: Colors.red,
+                      duration: const Duration(seconds: 2),
+                      behavior: SnackBarBehavior.floating,
+                      margin: EdgeInsets.all(screenWidth / 15),
+                    ),
+                  );
+                }
               },
             ),
     );

@@ -13,6 +13,7 @@ class UserDetailsScreen extends StatefulWidget {
 }
 
 class _UserDetailsScreenState extends State<UserDetailsScreen> {
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -34,55 +35,60 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth / 20),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // const SizedBox(height: 20),
-                const Center(
-                  child: Text(
-                    "This helps us understand you better. Please fill",
-                    textAlign: TextAlign.center,
+            child: Form(
+              key: formkey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // const SizedBox(height: 20),
+                  const Center(
+                    child: Text(
+                      "This helps us understand you better. Please fill",
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                const Center(
-                  child: Text(
-                    "with true information.",
-                    textAlign: TextAlign.center,
+                  const Center(
+                    child: Text(
+                      "with true information.",
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                SizedBox(height: screenHeight / 20),
-                const Text(
-                  "Enter First Name",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                SizedBox(height: screenHeight / 80),
+                  SizedBox(height: screenHeight / 20),
+                  const Text(
+                    "Enter First Name",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: screenHeight / 80),
 
-                //First name textform field
-                TextFormField1(screenWidth: screenWidth),
-                SizedBox(height: screenHeight / 35),
-                const Text(
-                  "Enter Last Name",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                SizedBox(height: screenHeight / 80),
+                  //First name textform field
+                  TextFormField1(screenWidth: screenWidth),
+                  SizedBox(height: screenHeight / 35),
+                  const Text(
+                    "Enter Last Name",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: screenHeight / 80),
 
-                //Last name textform field
-                TextFormField2(screenWidth: screenWidth),
-                SizedBox(height: screenHeight / 35),
-                const Text(
-                  "Email",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                SizedBox(height: screenHeight / 80),
-                EmailFormField(screenWidth: screenWidth),
-                SizedBox(
-                  height: screenHeight / 3.4,
-                ),
-                Button(
+                  //Last name textform field
+                  TextFormField2(screenWidth: screenWidth),
+                  SizedBox(height: screenHeight / 35),
+                  const Text(
+                    "Email",
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: screenHeight / 80),
+                  EmailFormField(screenWidth: screenWidth),
+                  SizedBox(
+                    height: screenHeight / 3.4,
+                  ),
+                  Button(
                     widget: widget,
                     screenHeight: screenHeight,
-                    screenWidth: screenWidth),
-              ],
+                    screenWidth: screenWidth,
+                    formKey: formkey,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
