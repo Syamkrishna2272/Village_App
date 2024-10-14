@@ -14,6 +14,7 @@ class TextFormField1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'First name is required';
